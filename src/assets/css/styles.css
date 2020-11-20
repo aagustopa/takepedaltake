@@ -1,0 +1,15 @@
+header{
+    border:1px solid blue;
+    width:100%;
+    margin-top:25%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    border-style: double;
+}
+
+footer{
+    position: fixed;
+    bottom:0;
+}
