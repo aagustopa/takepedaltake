@@ -1,12 +1,160 @@
-header{
-    border:1px solid blue;
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* NAVBAR */
+
+.content{
+    max-width: 1250px;
+    margin: auto;
+    padding:0px 30px;
+}
+
+.navbar{
+    position: fixed;
+    z-index: 5;
     width:100%;
-    margin-top:25%;
+    padding:25px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky{
+    padding: 10px 0;
+    background: #1b1b1b;
+}
+
+.navbar .content{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar .menu-list{
+    display: inline-flex;
+}
+
+.menu-list li{
+    list-style: none;
+}
+
+.menu-list li a{
+    color:#fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu-list li a:hover{
+    color: cyan;
+}
+
+.banner{
+    height: 100vh;
+    /* background: url("./assets/img/landing.jpg") no-repeat; */
+    background: url("https://images.unsplash.com/photo-1461783697079-622c15da8c47?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80") no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.about{
+    padding:40px 0;
+    background: #F1F1F1;
+}
+
+.about .title{
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.about p{
+    padding-top: 20px;
+    text-align: justify;
+}
+
+.icon{
+    color:#fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.icon.cancel-btn{
+    position: absolute;
+    right:30px;
+    top: 20px;
+}
+
+/* CARDS */
+
+.cards{
+    display: flex;
+    justify-content: center;
+    padding: 5%;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    border-style: double;
+}
+
+.first{
+    border: 1px solid blue;
+    width:30%;
+    margin-right: 10px;
+    height: 200px;
+}
+.second{
+    border:1px solid blue;
+    width:30%;
+    margin-right: 10px;
+}
+.third{
+    border:1px solid blue;
+    width:30%;
+    margin-right: 10px;
+}
+
+@media (max-width: 868px){
+    body.disabledScroll{
+        overflow: hidden;
+    }
+    .icon{
+        display: block;
+    }
+    .icon.hide{
+        display: none;
+    }
+    .navbar .menu-list{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        max-width: 400px;
+        background:#222;
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu-list.active{
+        left:0%;
+    }
+    .navbar .menu-list li{
+        margin-top: 45px;
+    }
+    .navbar .menu-list li a{
+        font-size: 23px;
+    }
 }
 
 footer{
