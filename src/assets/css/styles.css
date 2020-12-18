@@ -99,28 +99,228 @@
 
 /* CARDS */
 
-.cards{
+.slider{
+    max-width: 1150px;
     display: flex;
-    justify-content: center;
-    padding: 5%;
-    text-align: center;
+    /* margin-left: 135px;
+    margin-top: 50px; */
+    margin: 50px 0px 0px 135px;
 }
 
-.first{
-    border: 1px solid blue;
-    width:30%;
-    margin-right: 10px;
-    height: 200px;
+.slider .card{
+    flex: 1;
+    margin: 0 10px;
+    background: #fff;
 }
-.second{
-    border:1px solid blue;
-    width:30%;
-    margin-right: 10px;
+
+.slider .card .img{
+    /* height: 200px; */
+    height: 400px;
+    width: 100%;
 }
-.third{
-    border:1px solid blue;
-    width:30%;
-    margin-right: 10px;
+
+.slider .card .img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slider .card .content{
+    padding:10px 20px;
+}
+
+.card .content .title{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.card .content .sub-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #e74c3c;
+    line-height: 20px;
+}
+
+.card .content p{
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.card .content .btn{
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.card .content .btn button{
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.card .content .btn button:hover{
+    transform: scale(0.9);
+}
+/* FOOTER */
+
+.content1{
+  position: relative;
+  margin: 130px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.content1 .text{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #202020;
+}
+.content1 .p{
+  font-size: 2.1875rem;
+  font-weight: 600;
+  color: #202020;
+}
+footer{
+    clear: both;
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  background: #1b1b1b;
+}
+.main-content{
+  display: flex;
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content:before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+}
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background: #e74c3c;
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left .content .social a span:hover{
+  background: #e74c3c;
+}
+.center .content .fas{
+  font-size: 1.4375rem;
+  background: #1a1a1a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center .content .fas:hover{
+  background: #e74c3c;
+}
+.center .content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+.right form .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form .msgForm{
+  width: 100%;
+  font-size: 1.0625rem;
+  background: #151515;
+  padding-left: 10px;
+  border: 1px solid #222222;
+}
+.right form input:focus,
+.right form .msgForm:focus{
+  outline-color: #3498db;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #e74c3c;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn button:hover{
+  background: #000;
+}
+.bottom center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #151515;
+}
+.bottom center span{
+  color: #656565;
+}
+.bottom center a{
+  color: #e74c3c;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
 }
 
 @media (max-width: 868px){
@@ -155,9 +355,4 @@
     .navbar .menu-list li a{
         font-size: 23px;
     }
-}
-
-footer{
-    position: fixed;
-    bottom:0;
 }
