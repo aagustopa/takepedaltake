@@ -1,1 +1,1 @@
-web: http://127.0.0.1:5500/home.html
+web: C:\Users\aleja\OneDrive\Documents\takepedaltake\home.html
