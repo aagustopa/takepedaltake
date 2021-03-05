@@ -1,60 +1,63 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-  overflow-x: hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    overflow-x: hidden;
 }
 
-body{
-  background: #F1F1F1;
+body {
+    background: #F1F1F1;
 }
+
 
 /* NAVBAR */
 
+
 /* hacer ruta de codigo html */
-.content{
+
+.content {
     max-width: 1250px;
     margin: auto;
-    padding:0px 30px;
+    padding: 0px 30px;
 }
 
-.navbar{
+.navbar {
     position: fixed;
     z-index: 5;
-    width:100%;
-    padding:25px 0;
+    width: 100%;
+    padding: 25px 0;
     transition: all 0.3s ease;
 }
 
-.navbar.sticky{
+.navbar.sticky {
     padding: 10px 0;
     background: #1b1b1b;
 }
 
-.navbar .content{
+.navbar .content {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: space-between;
 }
 
-.navbar .logo a{
+.navbar .logo a {
     color: #fff;
     font-size: 30px;
     font-weight: 600;
     text-decoration: none;
 }
 
-.navbar .menu-list{
+.navbar .menu-list {
     display: inline-flex;
 }
 
-.menu-list li{
+.menu-list li {
     list-style: none;
 }
 
-.menu-list li a{
-    color:#fff;
+.menu-list li a {
+    color: #fff;
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
@@ -62,11 +65,11 @@ body{
     transition: all 0.3s ease;
 }
 
-.menu-list li a:hover{
-    color:#e74c3c;
+.menu-list li a:hover {
+    color: #96b0fd;
 }
 
-.banner{
+.banner {
     height: 100vh;
     background: url("../img/landing.jpg") no-repeat;
     /* background: url("https://images.unsplash.com/photo-1461783697079-622c15da8c47?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80") no-repeat; */
@@ -75,37 +78,38 @@ body{
     background-attachment: fixed;
 }
 
-.about{
-    padding:40px 0;
-    background:white;
+.about {
+    padding: 40px 0;
+    background: white;
 }
 
-.about .title{
+.about .title {
     font-size: 35px;
     font-weight: 700;
 }
 
-.about p{
+.about p {
     padding-top: 20px;
     text-align: justify;
 }
 
-.icon{
-    color:#fff;
+.icon {
+    color: #fff;
     font-size: 20px;
     cursor: pointer;
     display: none;
 }
 
-.icon.cancel-btn{
+.icon.cancel-btn {
     position: absolute;
-    right:30px;
+    right: 30px;
     top: 20px;
 }
 
+
 /* CARDS */
 
-.slider{
+.slider {
     max-width: 1150px;
     display: flex;
     margin-left: 135px;
@@ -114,53 +118,53 @@ body{
     margin-bottom: 50px;
 }
 
-.slider .card{
+.slider .card {
     flex: 1;
     margin: 0 10px;
     background: #fff;
 }
 
-.slider .card .img{
+.slider .card .img {
     /* height: 200px; */
     height: 400px;
     width: 100%;
 }
 
-.slider .card .img img{
+.slider .card .img img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-.slider .card .content{
-    padding:10px 20px;
+.slider .card .content {
+    padding: 10px 20px;
 }
 
-.card .content .title{
+.card .content .title {
     font-size: 25px;
     font-weight: 600;
 }
 
-.card .content .sub-title{
+.card .content .sub-title {
     font-size: 20px;
     font-weight: 600;
-    color: #e74c3c;
+    color: #96b0fd;
     line-height: 20px;
 }
 
-.card .content p{
+.card .content p {
     text-align: justify;
     margin: 10px 0;
 }
 
-.card .content .btn{
+.card .content .btn {
     display: block;
     text-align: left;
     margin: 10px 0;
 }
 
-.card .content .btn button{
-    background: #e74c3c;
+.card .content .btn button {
+    background: #96b0fd;
     color: #fff;
     border: none;
     outline: none;
@@ -171,168 +175,187 @@ body{
     transition: 0.2s;
 }
 
-.card .content .btn button:hover{
+.card .content .btn button:hover {
     transform: scale(0.9);
 }
 
+
 /* FOOTER */
-.content1{
-  position: relative;
-  margin: 130px auto;
-  text-align: center;
-  padding: 0 20px;
+
+.content1 {
+    position: relative;
+    margin: 130px auto;
+    text-align: center;
+    padding: 0 20px;
 }
-.content1 .text{
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #202020;
+
+.content1 .text {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #202020;
 }
-.content1 .p{
-  font-size: 2.1875rem;
-  font-weight: 600;
-  color: #202020;
+
+.content1 .p {
+    font-size: 2.1875rem;
+    font-weight: 600;
+    color: #202020;
 }
-footer{
+
+footer {
     clear: both;
-  position: relative;
-  bottom: 0px;
-  width: 100%;
-  background: #1b1b1b;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background: #1b1b1b;
 }
-.main-content{
-  display: flex;
-  color:whitesmoke;
+
+.main-content {
+    display: flex;
+    color: whitesmoke;
 }
-.main-content .box{
-  flex-basis: 50%;
-  padding: 10px 20px;
+
+.main-content .box {
+    flex-basis: 50%;
+    padding: 10px 20px;
 }
-.box h2{
-  font-size: 1.125rem;
-  font-weight: 600;
-  text-transform: uppercase;
+
+.box h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
-.box .content{
-  margin: 20px 0 0 0;
-  position: relative;
+
+.box .content {
+    margin: 20px 0 0 0;
+    position: relative;
 }
-.box .content:before{
-  position: absolute;
-  content: '';
-  top: -10px;
-  height: 2px;
-  width: 100%;
-  background: #1a1a1a;
+
+.box .content:before {
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
 }
-.box .content:after{
-  position: absolute;
-  content: '';
-  height: 2px;
-  width: 15%;
-  background: #e74c3c;
-  top: -10px;
+
+.box .content:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #96b0fd;
+    top: -10px;
 }
-.left .content p{
-  text-align: justify;
+
+.left .content p {
+    text-align: justify;
 }
-.left .content .social{
-  margin: 20px 0 0 0;
+
+.left .content .social {
+    margin: 20px 0 0 0;
 }
-.left .content .social a{
-  padding: 0 2px;
+
+.left .content .social a {
+    padding: 0 2px;
 }
-.left .content .social a span{
-  height: 40px;
-  width: 40px;
-  background: #1a1a1a;
-  line-height: 40px;
-  text-align: center;
-  font-size: 18px;
-  border-radius: 5px;
-  transition: 0.3s;
-  color: #e74c3c;
+
+.left .content .social a span {
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+    color: #96b0fd;
 }
-.left .content .social a span:hover{
-  background:#e74c3c;
-  color: white;
+
+.left .content .social a span:hover {
+    background: #96b0fd;
+    color: white;
 }
-.center .content .fas{
-  font-size: 1.4375rem;
-  background: #1a1a1a;
-  height: 45px;
-  width: 45px;
-  line-height: 45px;
-  text-align: center;
-  border-radius: 50%;
-  transition: 0.3s;
-  cursor: pointer;
+
+.center .content .fas {
+    font-size: 1.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
 }
-.center .content .fas:hover{
-  background: #e74c3c;
+
+.center .content .fas:hover {
+    background: #96b0fd;
 }
-.center .content .text{
-  font-size: 1.0625rem;
-  font-weight: 500;
-  padding-left: 10px;
+
+.center .content .text {
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
 }
-.center .content .phone{
-  margin: 15px 0;
+
+.center .content .phone {
+    margin: 15px 0;
 }
-@media (max-width: 868px){
+
+@media (max-width: 868px) {
     /* NAVBAR RESPONSIVE */
-    body.disabledScroll{
+    body.disabledScroll {
         overflow: hidden;
     }
-    .icon{
+    .icon {
         display: block;
     }
-    .icon.hide{
+    .icon.hide {
         display: none;
     }
-    .navbar .menu-list{
+    .navbar .menu-list {
         position: fixed;
         top: 0;
         left: -100%;
         height: 100vh;
         width: 100%;
         max-width: 400px;
-        background:#222;
+        background: #222;
         display: block;
         padding: 40px 0;
         text-align: center;
         transition: all 0.3s ease;
     }
-    .navbar .menu-list.active{
-        left:0%;
+    .navbar .menu-list.active {
+        left: 0%;
     }
-    .navbar .menu-list li{
+    .navbar .menu-list li {
         margin-top: 45px;
     }
-    .navbar .menu-list li a{
+    .navbar .menu-list li a {
         font-size: 23px;
     }
-
     /* CARDS RESPONSIVE */
-    .slider{
-      width: 100%;
-      display: block;
-      margin-left: 0px;
-      padding: 30px;
+    .slider {
+        width: 100%;
+        display: block;
+        margin-left: 0px;
+        padding: 30px;
     }
-    .slider .card{
-      margin-bottom: 30px;
+    .slider .card {
+        margin-bottom: 30px;
     }
-
     /* FOOTER RESPONSIVE */
-    footer{
-      position: relative;
-      bottom: 0px;
+    footer {
+        position: relative;
+        bottom: 0px;
     }
-    .main-content{
-      flex-wrap: wrap;
-      flex-direction: column;
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
     }
-    .main-content .box{
-      margin: 5px 0;
+    .main-content .box {
+        margin: 5px 0;
     }
 }
