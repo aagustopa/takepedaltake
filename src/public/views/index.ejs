@@ -10,7 +10,24 @@
 </head>
 
 <body>
-    <h1>1Views fuera de server en public/server</h1>
+    <h1>Views fuera de server en public/server</h1>
+    <!-- <div class="container"> -->
+    <div class="starting-btn">
+        <!-- <input type="submit" value="TakePedalTake"> -->
+        <a href="/create">Crea un nuevo usuario</a>
+        <% articles.forEach(article => {%>
+            <h2>
+                <%=article.title %>
+            </h2>
+            <h3>
+                <%=article.createdAt.toLocaleDateString()%>
+            </h3>
+            <h4>
+                <%= article.description%>
+            </h4>
+            <% }); %>
+    </div>
+    <!-- </div> -->
 </body>
 
 </html>

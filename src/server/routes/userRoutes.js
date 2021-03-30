@@ -1,8 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/createUser', function(req, res) {
-    res.send('Creando usuario');
-})
+const userController = require('../controllers/userController');
+const joiSchemaValidation = require('../middlewares/joiSchemaValidation');
+const userSchema = require('../models/joi/userSchemas')
+
+router.get('/list',
+    joiSchemaValidation.validate(userSchema.getUserListSchema, 'query'),
+    userController.getAllUsers);
+
+router.get('/create',
+    joiSchemaValidation.validate(userSchema.createUserSchema, `body`),
+    userController.create);
 
 module.exports = router;
