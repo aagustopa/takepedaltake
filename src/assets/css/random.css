@@ -12,6 +12,7 @@ h1 {
     height: 200px;
     position: relative;
     border: 3px solid green;
+    "dev": "concurrently --kill-others \"npm run start-watch\" \"npm run wp-server\""
 }
 
 .starting-btn {

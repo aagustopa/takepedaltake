@@ -16,6 +16,40 @@ body {
 
 /* hacer ruta de codigo html */
 
+.about2 {
+    display: flex;
+    height: 400px;
+    background-color: #1b1b1b;
+    overflow-y: hidden;
+}
+
+.about2>.content {
+    color: whitesmoke;
+    font-size: 23px;
+    text-align: center;
+}
+
+.about2>.content>h1,
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.photo {
+    width: 50%;
+    background: url("../img/newpedal.jpg") no-repeat;
+    /* background: url("https://images.unsplash.com/photo-1461783697079-622c15da8c47?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80") no-repeat; */
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+}
+
+.photo:nth-child(1) {
+    background: url("../img/pedal1.jpg") no-repeat;
+    /* background: url("https://images.unsplash.com/photo-1461783697079-622c15da8c47?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80") no-repeat; */
+    background-size: cover;
+    background-position: center;
+}
+
 .content {
     max-width: 1250px;
     margin: auto;

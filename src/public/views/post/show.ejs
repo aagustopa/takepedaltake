@@ -11,10 +11,18 @@
 
 <body>
     <div class="container">
-        <h1 class="mb-4">Create post</h1>
-        <form action="/post" method="POST">
-            <%-include('_form_fields')%>
-        </form>
+        <h1 class="mb-1">
+            <%=post.title%>
+        </h1>
+        <div class="text-muted mb-2">
+            <%=post.createdAt.toLocaleDateString()%>
+        </div>
+        <a href="/post/" class="btn btn-secondary">All Post</a>
+        <a href="/post/edit/<%=post.id%>" class="btn btn-info">Edit</a>
+
+        <div>
+            <%-post.sanitizedHtml%>
+        </div>
     </div>
 </body>
 

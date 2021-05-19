@@ -1,6 +1,6 @@
 const userService = require('../services/userServices');
 
-module.exports.getAllUsers = function(req, res) {
+module.exports.getAllUsers = async(req, res) => {
     console.log('list of users');
     const responseObj = { status: 500, msg: 'Internal server error' };
     try {
@@ -25,7 +25,7 @@ module.exports.getAllUsers = function(req, res) {
     res.status(responseObj.status).send(responseObj);
 }
 
-module.exports.create = function(req, res) {
+module.exports.create = async(req, res) => {
     console.log('creating user');
     const responseObj = { status: 500, msg: 'Internal server error' };
 

@@ -1,0 +1,75 @@
+header {
+    background: #e9c46a;
+    color: whitesmoke;
+}
+
+section {
+    justify-content: center;
+    align-items: center;
+}
+
+#both {
+    /* border: 3px solid red; */
+    display: flex;
+    /* width: 80%; */
+}
+
+#left,
+#right {
+    /* border: 1px solid blue; */
+    width: 50%;
+    height: 140px;
+    color: whitesmoke;
+}
+
+#left {
+    background: #264653;
+}
+
+#right {
+    background: #2a9d8f;
+}
+
+
+/* SOv */
+
+.accordion {
+    background-color: #2a9d8f;
+    color: whitesmoke;
+    cursor: pointer;
+    padding: 50px;
+    width: 50%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-bottom: 1px solid #000;
+}
+
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #eee;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    width: 47.2%;
+    float: right;
+}

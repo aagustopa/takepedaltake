@@ -14,7 +14,7 @@
     <!-- <div class="container"> -->
     <div class="starting-btn">
         <!-- <input type="submit" value="TakePedalTake"> -->
-        <a href="/create">Crea un nuevo usuario</a>
+        <a href="/user/create">Crea un nuevo usuario</a>
         <% articles.forEach(article => {%>
             <h2>
                 <%=article.title %>
@@ -27,6 +27,7 @@
             </h4>
             <% }); %>
     </div>
+    <button type="submit" class="btn btn-success">Crear actividad</button>
     <!-- </div> -->
 </body>
 

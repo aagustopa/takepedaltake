@@ -2,7 +2,7 @@ const crudRepository = require('../repository/crudRepository');
 const User = require('../models/db/userModel');
 const mongoose = require('mongoose');
 
-module.exports.getAllUsers = async function(dataFromController) {
+module.exports.getAllUsers = async(dataFromController) => {
     const responseObj = { status: false };
     try {
         const data = {
