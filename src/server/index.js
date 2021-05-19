@@ -30,24 +30,8 @@ app.use(methodOverride('_method'))
 
 connect.createConnection();
 
-// app.get('/', function(req, res) {
-//     const articles = [{
-//         title: 'Test Article',
-//         createdAt: new Date(),
-//         description: 'Test description'
-//     }, {
-//         title: 'Test Article 2',
-//         createdAt: new Date(),
-//         description: 'Test description 2'
-//     }]
-//     res.render('index', { articles: articles, text: 'hola' });
-// })
-
 app.get('/', function(req, res) {
-    // const post = await Post.find().sort({ createdAt: 'desc' })
-    // res.send('putito');
-    // res.render('test', { post: post });
-    res.send('putito')
+    res.render('home')
 })
 
 app.use('/user', require('./routes/userRoutes'));
