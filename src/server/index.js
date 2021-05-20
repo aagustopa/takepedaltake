@@ -14,6 +14,7 @@ require('dotenv').config();
 // app.use(express.static('../assets'));
 app.use(express.static('C:/Users/aleja/OneDrive/Documents/takepedaltake/src/assets'));
 // app.use('/css', express.static(__dirname + 'assets/css'));
+app.use(express.static('C:/Users/aleja/OneDrive/Documents/takepedaltake/src/js'))
 
 // aqui digo que las vistas estan en la ruta public/views
 const outsitePath = 'C:/Users/aleja/OneDrive/Documents/takepedaltake/src/public/views';
@@ -30,8 +31,12 @@ app.use(methodOverride('_method'))
 
 connect.createConnection();
 
-app.get('/', function(req, res) {
-    res.render('home')
+// app.get('/', function(req, res) {
+//     res.render('home')
+// })
+
+app.get('/', (req, res) => {
+    res.render('index', { name: 'Alex' });
 })
 
 app.use('/user', require('./routes/userRoutes'));
