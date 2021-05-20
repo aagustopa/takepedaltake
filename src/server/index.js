@@ -35,12 +35,18 @@ app.get('/', function(req, res) {
     res.render('home')
 })
 
+
 // app.get('/', (req, res) => {
 //     res.render('index', { name: 'Alex' });
 // })
 
 app.use('/user', require('./routes/userRoutes'));
 app.use('/post', require('./routes/postRoutes'));
+
+// 404 not found
+app.get('**', (req, res) => {
+    res.status(404).render('404/error');
+})
 
 app.listen(process.env.PORT, function() {
     console.log(`Example listening and working on port ${process.env.PORT}!\nhttp://localhost:3000/`)

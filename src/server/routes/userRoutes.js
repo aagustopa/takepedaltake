@@ -8,6 +8,7 @@ const joiSchemaValidation = require('../middlewares/joiSchemaValidation');
 const userSchema = require('../models/joi/userSchemas');
 
 const User = require('../models/db/userModel');
+const toastr = require('toastr');
 
 const users = [];
 
@@ -43,6 +44,7 @@ router.post('/register', async(req, res) => {
     });
     try {
         user = await user.save();
+        toastr.success('The process has been saved.', 'Success');
         res.redirect('/');
     } catch (e) {
         console.log(e);
