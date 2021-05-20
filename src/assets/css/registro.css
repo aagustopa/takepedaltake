@@ -1,0 +1,18 @@
+#backImg {
+    /* width: 50%; */
+    background: url("../img/newpedal.jpg") no-repeat;
+    /* background: url("https://images.unsplash.com/photo-1461783697079-622c15da8c47?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80") no-repeat; */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(60%);
+}
+
+#userForm {
+    background-color: #302c2c;
+    color: white;
+}
+
+#userForm>input:focus {
+    background-color: #777777;
+    color: white;
+}

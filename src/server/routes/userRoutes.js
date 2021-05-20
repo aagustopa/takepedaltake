@@ -7,6 +7,8 @@ const userController = require('../controllers/userController');
 const joiSchemaValidation = require('../middlewares/joiSchemaValidation');
 const userSchema = require('../models/joi/userSchemas');
 
+const User = require('../models/db/userModel');
+
 const users = [];
 
 router.get('/list',
@@ -31,6 +33,25 @@ router.get('/register', (req, res) => {
 })
 
 router.post('/register', async(req, res) => {
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    let user = new User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: hashedPassword,
+        birthDate: req.body.birthDate
+    });
+    try {
+        user = await user.save();
+        res.redirect('/');
+    } catch (e) {
+        console.log(e);
+        res.send(`el registro ha petado ${e}`)
+    }
+})
+
+/* register from video nodejs passport login system
+router.post('/register', async(req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
         users.push({
@@ -44,7 +65,7 @@ router.post('/register', async(req, res) => {
         res.redirect('/register')
     }
     console.log(users);
-})
+})*/
 
 
 // https://www.geeksforgeeks.org/routing-path-for-expressjs/?ref=rp

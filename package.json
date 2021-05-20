@@ -41,7 +41,8 @@
         "mongoose": "^5.12.1",
         "passport": "^0.4.1",
         "passport-local": "^1.0.0",
-        "slugify": "^1.5.3"
+        "slugify": "^1.5.3",
+        "toastr": "^2.1.4"
     },
     "devDependencies": {
         "concurrently": "^6.1.0"

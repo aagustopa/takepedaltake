@@ -31,13 +31,13 @@ app.use(methodOverride('_method'))
 
 connect.createConnection();
 
-// app.get('/', function(req, res) {
-//     res.render('home')
-// })
-
-app.get('/', (req, res) => {
-    res.render('index', { name: 'Alex' });
+app.get('/', function(req, res) {
+    res.render('home')
 })
+
+// app.get('/', (req, res) => {
+//     res.render('index', { name: 'Alex' });
+// })
 
 app.use('/user', require('./routes/userRoutes'));
 app.use('/post', require('./routes/postRoutes'));
