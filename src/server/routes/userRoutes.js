@@ -33,24 +33,12 @@ router.get('/register', (req, res) => {
     res.render('user/register');
 })
 
-router.post('/register', async(req, res) => {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    let user = new User({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        password: hashedPassword,
-        birthDate: req.body.birthDate
-    });
-    try {
-        user = await user.save();
-        toastr.success('The process has been saved.', 'Success');
-        res.redirect('/');
-    } catch (e) {
-        console.log(e);
-        res.send(`el registro ha petado ${e}`)
+router.post('/register', (req, res) => {
+    if (userSchema.create, userController.create) {
+        console.log('usuario creado correctamente')
     }
 })
+
 
 /* register from video nodejs passport login system
 router.post('/register', async(req, res) => {
@@ -68,7 +56,22 @@ router.post('/register', async(req, res) => {
     }
     console.log(users);
 })*/
-
+// const hashedPassword = await bcrypt.hash(req.body.password, 10);
+// let user = new User({
+//     firstName: req.body.firstName,
+//     lastName: req.body.lastName,
+//     email: req.body.email,
+//     password: hashedPassword,
+//     birthDate: req.body.birthDate
+// });
+// try {
+//     user = await user.save();
+//     toastr.success('The process has been saved.', 'Success');
+//     res.redirect('/');
+// } catch (e) {
+//     console.log(e);
+//     res.send(`el registro ha petado ${e}`)
+// }
 
 // https://www.geeksforgeeks.org/routing-path-for-expressjs/?ref=rp
 module.exports = router;

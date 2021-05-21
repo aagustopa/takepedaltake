@@ -10,15 +10,16 @@ Joi.objectId = require('joi-objectid')(Joi);
 // $/
 
 module.exports = {
-    getUserListSchema: Joi.object({
-        skip: Joi.number().integer().optional(),
-        limit: Joi.number().integer().optional()
-    }).and('skip', 'limit'),
-    createUserSchema: Joi.object({
+    create: Joi.object({
         firstName: Joi.string().alphanum().max(20).min(2).required(),
-        lastName: Joi.string().alphanum().max(20).min(2).required(),
+        lastName: Joi.string().max(20).min(2).required(),
         email: Joi.string().email().required(),
-        password: Joi.string().pattern(new RegExp('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$')),
-        repeat_password: Joi.ref('password')
+        password: Joi.string().min(4).max(15).required(),
+        birthDate: Joi.date().required()
+    }).validate(this.createUserSchema, (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log(result);
     })
 }
