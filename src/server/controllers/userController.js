@@ -36,6 +36,7 @@ module.exports.create = async(req, res) => {
             responseObj.body = responseFromService.result;
             responseObj.msg = `User created succesfully`;
             responseObj.status = 201;
+            res.redirect('/');
         }
     } catch (error) {
         responseObj.error = error;

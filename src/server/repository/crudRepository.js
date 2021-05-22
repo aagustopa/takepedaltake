@@ -21,6 +21,7 @@ module.exports.save = async(objToSave) => {
             result: doc,
             status: true
         };
+        console.log(responseObj);
     } catch (error) {
         responseObj.error = error;
         console.log(`ERROR-crudRepository-save: ${error}`);

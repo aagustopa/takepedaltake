@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 
 const userController = require('../controllers/userController');
 const joiSchemaValidation = require('../middlewares/joiSchemaValidation');
+const validatingJoi = require('../middlewares/joiValidation');
 const userSchema = require('../models/joi/userSchemas');
 
 const User = require('../models/db/userModel');
@@ -33,11 +34,8 @@ router.get('/register', (req, res) => {
     res.render('user/register');
 })
 
-router.post('/register', (req, res) => {
-    if (userSchema.create, userController.create) {
-        console.log('usuario creado correctamente')
-    }
-})
+router.post('/register',
+    validatingJoi.validate(userSchema.create), userController.create);
 
 
 /* register from video nodejs passport login system
@@ -56,6 +54,8 @@ router.post('/register', async(req, res) => {
     }
     console.log(users);
 })*/
+
+// this works
 // const hashedPassword = await bcrypt.hash(req.body.password, 10);
 // let user = new User({
 //     firstName: req.body.firstName,

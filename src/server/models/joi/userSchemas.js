@@ -16,10 +16,12 @@ module.exports = {
         email: Joi.string().email().required(),
         password: Joi.string().min(4).max(15).required(),
         birthDate: Joi.date().required()
-    }).validate(this.createUserSchema, (err, result) => {
-        if (err) {
-            console.log(err);
-        }
-        console.log(result);
+    }),
+    update: Joi.object({
+        firstName: Joi.string().alphanum().max(20).min(2).optional(),
+        lastName: Joi.string().max(20).min(2).optional(),
+        email: Joi.string().email().optional(),
+        password: Joi.string().min(4).max(15).optional(),
+        birthDate: Joi.date().optional(),
     })
 }
