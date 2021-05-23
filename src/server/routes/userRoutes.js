@@ -10,6 +10,7 @@ const userSchema = require('../models/joi/userSchemas');
 
 const User = require('../models/db/userModel');
 const toastr = require('toastr');
+const { ensureAuthenticated } = require('../guard/authenticated');
 
 const users = [];
 
@@ -27,7 +28,7 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-
+    res.send('putito te logeaste');
 })
 
 router.get('/register', (req, res) => {
@@ -35,7 +36,9 @@ router.get('/register', (req, res) => {
 })
 
 router.post('/register',
-    validatingJoi.validate(userSchema.create), userController.create);
+    validatingJoi.validate(userSchema.create),
+    userController.create
+);
 
 
 /* register from video nodejs passport login system
