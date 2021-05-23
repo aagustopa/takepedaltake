@@ -8,33 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/registro.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="/login.js" defer></script>
+    <!-- <script src="/login.js" defer></script> -->
     <title>Registro</title>
 </head>
 
 <body>
-    <!-- <nav class="navbar">
-        <div class="content">
-            <div class="logo"><a href="#">TakePedalTake</a></div>
-            <ul class="menu-list">
-                <div class="icon cancel-btn">
-                    <i class="fas fa-times"></i>
-                </div>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Posts</a></li>
-                <li><a href="#">Compraventa</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-            <div class="icon menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav> -->
-    <!-- <div class="jumbotron"> -->
     <!-- https://stackoverflow.com/questions/23046801/height-not-100-on-container-fluid-even-though-html-and-body-are -->
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid h-100">
+        <div class="row justify-content-center h-100">
             <div class="col-xs-12 col-sm-6 col-md-8" id="backImg">
                 <!-- <img src="/img/landing.jpg" alt="" width="900"> -->
             </div>
@@ -63,11 +44,10 @@
                     </div>
                     <input type="submit" value="Register" class="btn btn-success mt-3">
                 </form>
-                <p class="d-inline mb-4">Si ya tienes cuenta puedes iniciar sesión <a href="login" class="btn btn-primary">Logeate</a> </p>
+                <p class="d-inline">¿Ya tienes cuenta? <a href="login">Inicia sesión</a> </p>
             </div>
         </div>
     </div>
-    <!-- </div> -->
 </body>
 
 </html>

@@ -73,9 +73,8 @@
 } */
 
 html,
-body,
-.container {
-    height: calc(100% - 18px);
+body {
+    height: 100%;
 }
 
 #backImg {
@@ -94,4 +93,13 @@ body,
 #userForm>input:focus {
     background-color: #777777;
     color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #2796ff;
+}
+
+a:hover {
+    color: #81c2ff;
 }
