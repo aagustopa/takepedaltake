@@ -51,3 +51,6 @@ app.get('**', (req, res) => {
 app.listen(process.env.PORT, function() {
     console.log(`Example listening and working on port ${process.env.PORT}!\nhttp://localhost:3000/`)
 })
+
+
+// https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application-es

@@ -1,11 +1,15 @@
 module.exports.validate = (schema) => {
     return async(req, res, next) => {
+        let putito = [];
         try {
             await schema.validateAsync(req.body);
             next();
         } catch (error) {
             console.log(error);
-            res.send(error.message);
+            putito.push(error.message);
+            if (putito.length > 0) {
+                res.render('user/register', { putito });
+            }
         }
     }
 }
