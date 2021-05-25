@@ -65,6 +65,12 @@ app.get('/', function(req, res) {
     res.render('home')
 })
 
+// app.get('/', function(req, res) {
+//     res.render('home', {
+//         name: req.user.name
+//     })
+// })
+
 app.use('/user', require('./routes/userRoutes'));
 app.use('/post', require('./routes/postRoutes'));
 

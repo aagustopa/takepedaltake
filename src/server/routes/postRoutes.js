@@ -9,7 +9,7 @@ router.get('/', async(req, res) => {
     res.render('test', { post: post });
 })
 
-router.get('/new', (req, res) => {
+router.get('/new', ensureAuthenticated, (req, res) => {
     res.render('post/new', { post: new Post() });
 })
 

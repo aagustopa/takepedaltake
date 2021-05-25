@@ -30,7 +30,7 @@ router.get('/login', (req, res) => {
 
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', {
-        successRedirect: '/',
+        successRedirect: 'profile',
         failureRedirect: 'login',
         failureFlash: true
     })(req, res, next);
@@ -45,8 +45,16 @@ router.post('/register',
     userController.create
 );
 
-router.get('/profile', (req, res) => {
-    res.render('user/profile');
+router.get('/profile', ensureAuthenticated, (req, res) =>
+    res.render('user/profile', {
+        name: req.user.name
+    }));
+
+router.get('/logout', (req, res) => {
+    req.logout();
+    req.flash('success_msg', 'You are logged out');
+    res.redirect('login');
+    // res.send('cerraste sesion putito');
 })
 
 

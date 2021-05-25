@@ -3,7 +3,7 @@ module.exports = {
         if (req.isAuthenticated()) {
             return next();
         }
-        req.flash('error_msg', 'Please login to view this page');
-        res.redirect('/users/login');
+        req.flash('error_msg', 'Necesitas inciar sesión para crear un post');
+        res.redirect('../user/login');
     }
 }
