@@ -1,4 +1,5 @@
 const userService = require('../services/userServices');
+const bcrypt = require('bcrypt');
 
 module.exports.getAllUsers = async(req, res) => {
     console.log('list of users');
@@ -30,13 +31,21 @@ module.exports.create = async(req, res) => {
     const responseObj = { status: 500, msg: 'Internal server error' };
 
     try {
-        const data = req.body;
+        const hashPwd = await bcrypt.hash(req.body.password, 10);
+        const data = {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: hashPwd,
+            birthDate: req.body.birthDate
+        }
         const responseFromService = await userService.create(data);
         if (responseFromService.status) {
             responseObj.body = responseFromService.result;
             responseObj.msg = `User created succesfully`;
             responseObj.status = 201;
-            res.redirect('/');
+            req.flash('success_msg', 'Estas registrado, ya puedes logearte');
+            res.redirect('login');
         }
     } catch (error) {
         responseObj.error = error;

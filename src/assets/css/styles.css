@@ -26,7 +26,7 @@ body {
 .about2>.content {
     color: whitesmoke;
     font-size: 23px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .about2>.content>h1,

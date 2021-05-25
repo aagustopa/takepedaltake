@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const app = express();
 const bcrypt = require('bcrypt');
+const passport = require('passport');
 
 const userController = require('../controllers/userController');
 const joiSchemaValidation = require('../middlewares/joiSchemaValidation');
@@ -27,9 +28,13 @@ router.get('/login', (req, res) => {
     res.render('user/login');
 })
 
-router.post('/login', (req, res) => {
-    res.send('putito te logeaste');
-})
+router.post('/login', (req, res, next) => {
+    passport.authenticate('local', {
+        successRedirect: '/',
+        failureRedirect: 'login',
+        failureFlash: true
+    })(req, res, next);
+});
 
 router.get('/register', (req, res) => {
     res.render('user/register');
@@ -39,6 +44,10 @@ router.post('/register',
     validatingJoi.validate(userSchema.create),
     userController.create
 );
+
+router.get('/profile', (req, res) => {
+    res.render('user/profile');
+})
 
 
 /* register from video nodejs passport login system
