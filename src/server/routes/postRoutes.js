@@ -1,12 +1,16 @@
 const express = require('express');
 const Post = require('./../models/db/postModel');
 const router = express.Router();
-const { ensureAuthenticated } = require('../guard/authenticated');
+const { ensureAuthenticated, ensureGuest } = require('../middlewares/guard/authenticated');
 
 // boton ALL POST from vista showe.js not working (yet)
 router.get('/', async(req, res) => {
     const post = await Post.find().sort({ createdAt: 'desc' })
     res.render('test', { post: post });
+})
+
+router.get('/newview', (req, res) => {
+    res.render('post');
 })
 
 router.get('/new', ensureAuthenticated, (req, res) => {

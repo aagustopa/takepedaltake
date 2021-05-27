@@ -11,7 +11,7 @@ const userSchema = require('../models/joi/userSchemas');
 
 const User = require('../models/db/userModel');
 const toastr = require('toastr');
-const { ensureAuthenticated } = require('../guard/authenticated');
+const { ensureAuthenticated, ensureGuest } = require('../middlewares/guard/authenticated');
 
 const users = [];
 
@@ -24,7 +24,7 @@ router.get('/create',
     // userController.create);
 );
 
-router.get('/login', (req, res) => {
+router.get('/login', ensureGuest, (req, res) => {
     res.render('user/login');
 })
 
@@ -36,7 +36,7 @@ router.post('/login', (req, res, next) => {
     })(req, res, next);
 });
 
-router.get('/register', (req, res) => {
+router.get('/register', ensureGuest, (req, res) => {
     res.render('user/register');
 })
 
