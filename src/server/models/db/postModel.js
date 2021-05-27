@@ -31,7 +31,15 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-})
+});
+/* favourite:{
+        type:Boolean,
+        default:false
+
+    https://www.youtube.com/watch?v=3J925fRl_UE
+    minuto 1:13:50
+
+    }*/
 
 // video min 41:30
 postSchema.pre('validate', function(next) {
