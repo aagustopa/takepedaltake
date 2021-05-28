@@ -31,10 +31,16 @@ module.exports = (passport) => {
         })
     );
 
+    // esto coge un usuario y callback
+    // en el momento que el usuario se autentique nosotros almacenamos en una sesion su id
     passport.serializeUser((user, done) => {
         done(null, user.id);
     });
 
+    // esto es el proceso inverso
+    // coge un id y genera un usuario
+    // explicado: si hay un usuario en la sesion lo que haré será busca por id ese usuario
+    // en la busqueda puede encontrar al usuario o tener un error y eso enviamos
     passport.deserializeUser((id, done) => {
         User.findById(id, (err, user) => {
             done(err, user);

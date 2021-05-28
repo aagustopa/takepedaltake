@@ -1,5 +1,6 @@
 const userService = require('../services/userServices');
 const bcrypt = require('bcrypt');
+const User = require('../models/db/userModel');
 
 module.exports.getAllUsers = async(req, res) => {
     console.log('list of users');
@@ -29,7 +30,6 @@ module.exports.getAllUsers = async(req, res) => {
 module.exports.create = async(req, res) => {
     console.log('creating user');
     const responseObj = { status: 500, msg: 'Internal server error' };
-
     try {
         const hashPwd = await bcrypt.hash(req.body.password, 10);
         const data = {
@@ -39,13 +39,19 @@ module.exports.create = async(req, res) => {
             password: hashPwd,
             birthDate: req.body.birthDate
         }
-        const responseFromService = await userService.create(data);
-        if (responseFromService.status) {
-            responseObj.body = responseFromService.result;
-            responseObj.msg = `User created succesfully`;
-            responseObj.status = 201;
-            req.flash('success_msg', 'Estas registrado, ya puedes logearte');
-            res.redirect('login');
+        const emailUser = await User.findOne({ email: data.email });
+        if (emailUser) {
+            req.flash('error_msg', 'Ese email ya existe putito');
+            res.redirect('register');
+        } else {
+            const responseFromService = await userService.create(data);
+            if (responseFromService.status) {
+                responseObj.body = responseFromService.result;
+                responseObj.msg = `User created succesfully`;
+                responseObj.status = 201;
+                req.flash('success_msg', 'Estas registrado, ya puedes logearte');
+                res.redirect('login');
+            }
         }
     } catch (error) {
         responseObj.error = error;

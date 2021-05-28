@@ -22,8 +22,11 @@
                 <li><a href="#">About</a></li>
                 <li><a href="/post/">Posts</a></li>
                 <li><a href="#">Compraventa</a></li>
-                <li><a href="/user/register">Login</a></li>
-                <li><a href="/user/profile">Profile</a></li>
+                <% if(user){%>
+                    <li><a href="/user/profile">Profile</a></li>
+                    <%} else{%>
+                        <li><a href="/user/register">Login</a></li>
+                        <%}%>
             </ul>
             <div class="icon menu-btn">
                 <i class="fas fa-bars"></i>

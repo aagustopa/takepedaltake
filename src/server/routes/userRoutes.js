@@ -30,7 +30,7 @@ router.get('/login', ensureGuest, (req, res) => {
 
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', {
-        successRedirect: 'profile',
+        successRedirect: '/',
         failureRedirect: 'login',
         failureFlash: true
     })(req, res, next);
@@ -46,9 +46,8 @@ router.post('/register',
 );
 
 router.get('/profile', ensureAuthenticated, (req, res) =>
-    res.render('user/profile', {
-        name: req.user.name
-    }));
+    res.render('user/profile')
+);
 
 router.get('/logout', (req, res) => {
     req.logout();

@@ -1,5 +1,6 @@
 module.exports = {
     ensureAuthenticated: (req, res, next) => {
+        // isAuthenticated() es una funcion del paquete passport
         if (req.isAuthenticated()) {
             return next();
         }
