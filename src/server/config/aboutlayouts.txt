@@ -3,3 +3,6 @@ crear un _header.ejs = contendrá la etiqueta header donde estará el link de bo
 crear un _footer.ejs = contendrá la etiqueta final de body y html
 
 en nuevas vistas = include el header y footer arriba y abajo y en medio el codigo que querramos
+
+https://www.youtube.com/watch?v=-bI0diefasA 41:24
+

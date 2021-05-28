@@ -6,6 +6,8 @@ const createDomPurify = require('dompurify');
 const { JSDOM } = require('jsdom');
 const dompurify = createDomPurify(new JSDOM().window);
 
+// https://www.markdownguide.org/basic-syntax/
+
 const postSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -17,6 +19,10 @@ const postSchema = new mongoose.Schema({
     markdown: {
         type: String,
         required: true
+    },
+    favourite: {
+        type: Boolean,
+        default: false
     },
     createdAt: {
         type: Date,

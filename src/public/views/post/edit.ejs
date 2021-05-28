@@ -12,6 +12,7 @@
 <body>
     <div class="container">
         <h1 class="mb-4">Edit post</h1>
+        <h6 class="mb-4">Maybe you need this guide about how to write a markdown <a target="_blank" href="https://www.markdownguide.org/basic-syntax/">Basyc Syntax | Markdown Guide</a></h6>
         <form action="/post/<%=post.id%>?_method=PUT" method="POST">
             <%-include('_form_fields')%>
         </form>

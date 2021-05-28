@@ -7,8 +7,12 @@ const connect = require('./database/connect');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
-const passport = require('passport')
+const passport = require('passport');
+const path = require('path');
 require('dotenv').config();
+
+// new hosting?
+// https://www.atlantic.net/vps-hosting/webdevsimplified/
 
 // passport config
 require('./config/passport')(passport);
@@ -20,10 +24,11 @@ app.use(express.static('C:/Users/aleja/OneDrive/Documents/takepedaltake/src/asse
 app.use(express.static('C:/Users/aleja/OneDrive/Documents/takepedaltake/src/js'))
 
 // aqui digo que las vistas estan en la ruta public/views
-const outsitePath = 'C:/Users/aleja/OneDrive/Documents/takepedaltake/src/public/views';
-app.set('views', outsitePath);
+// const outsitePath = 'C:/Users/aleja/OneDrive/Documents/takepedaltake/src/public/views';
+app.set('views', path.join(__dirname, '../public/views'));
 
 // aqui digo que view engine(convertidor de ejs a html) lea ficheros ejs
+// es esto mejorable??? ver video https://www.youtube.com/watch?v=-bI0diefasA minuto 20:30 y ver pagina about ejs https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application-es 
 app.set('view engine', 'ejs');
 
 app.use(cors());
@@ -38,6 +43,7 @@ connect.createConnection();
 // El middleware express-session almacena los datos de sesión en el servidor;
 // sólo guarda el ID de sesión en la propia cookie, no los datos de sesión. 
 // De forma predeterminada, utiliza el almacenamiento en memoria y no está diseñado para un entorno de producción
+// otro dato: esta configuración basica nos permetirá autenticar al usuario y almacenar sus datos temporalmente
 app.use(session({
     secret: 'secret',
     resave: true,

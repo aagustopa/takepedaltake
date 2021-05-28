@@ -17,6 +17,15 @@ router.get('/new', ensureAuthenticated, (req, res) => {
     res.render('post/new', { post: new Post() });
 })
 
+// ruta para actualizar boton de favorito (boolean)
+router.get('/turn/:id', async(req, res) => {
+    const { id } = req.params;
+    const post = await Post.findById(id);
+    post.favourite = !post.favourite;
+    await post.save();
+    res.redirect('/post');
+})
+
 router.get('/edit/:id', async(req, res) => {
     const post = await Post.findById(req.params.id)
     res.render('post/edit', { post: post });
