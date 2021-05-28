@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const ejs = require('ejs');
@@ -9,10 +8,15 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const path = require('path');
+// const initialSetup = require('./libs/initialSetup');
 require('dotenv').config();
 
 // new hosting?
 // https://www.atlantic.net/vps-hosting/webdevsimplified/
+
+const app = express();
+// initialSetup.createRoles();
+// https://www.youtube.com/watch?v=lV7mxivGX_I minuto 1:22:55
 
 // passport config
 require('./config/passport')(passport);

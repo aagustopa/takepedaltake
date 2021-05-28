@@ -37,7 +37,14 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true
     }
+    // user:{
+    //     type:String
+    // }
 });
+/*id usuario por cada post
+https://www.youtube.com/watch?v=-bI0diefasA minuto 3:13:40
+ */
+
 /* favourite:{
         type:Boolean,
         default:false
