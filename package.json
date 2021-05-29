@@ -4,7 +4,6 @@
     "description": "website project by aagustopa",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "nodemon": "nodemon src/server/index.js",
         "open": "start http://localhost:3000",
         "takepedaltake": "concurrently \"npm run nodemon\" \"npm run open\""
