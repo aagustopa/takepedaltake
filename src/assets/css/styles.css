@@ -373,9 +373,9 @@ footer {
     }
     /* MAIN HOME IMAGE RESPONSIVE */
     .banner {
-        width: 100%;
-        display: block;
-        /* height: auto; */
+        min-width: 100%;
+        height: auto;
+        /* display: block; */
     }
     /* CARDS RESPONSIVE */
     .slider {
