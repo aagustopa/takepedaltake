@@ -6,7 +6,7 @@
     "scripts": {
         "nodemon": "nodemon src/server/index.js",
         "open": "start http://localhost:3000",
-        "start": "concurrently \"npm run nodemon\" \"npm run open\""
+        "takepedaltake": "concurrently \"npm run nodemon\" \"npm run open\""
     },
     "repository": {
         "type": "git",
