@@ -1,1 +1,1 @@
-<script type="text/javascript" src="./src/server/index.js"></script>
+<script defer type="text/javascript" src="./src/server/index.js"></script>
