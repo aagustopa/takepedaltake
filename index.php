@@ -1,1 +1,0 @@
-<script defer type="text/javascript" src="./src/server/index.js"></script>
