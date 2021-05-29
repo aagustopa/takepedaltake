@@ -104,6 +104,7 @@ h2 {
 }
 
 .banner {
+    /* width: 100%; */
     height: 100vh;
     background: url("../img/landing.jpg") no-repeat;
     /* background: url("https://images.unsplash.com/photo-1461783697079-622c15da8c47?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80") no-repeat; */
@@ -369,6 +370,11 @@ footer {
     }
     .navbar .menu-list li a {
         font-size: 23px;
+    }
+    /* MAIN HOME IMAGE RESPONSIVE */
+    .banner {
+        width: 100%;
+        height: auto;
     }
     /* CARDS RESPONSIVE */
     .slider {
