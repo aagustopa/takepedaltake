@@ -6,7 +6,7 @@
     "scripts": {
         "nodemon": "nodemon src/server/index.js",
         "open": "start http://localhost:3000",
-        "takepedaltake": "concurrently \"npm run nodemon\" \"npm run open\""
+        "start": "concurrently \"npm run nodemon\" \"npm run open\""
     },
     "repository": {
         "type": "git",
@@ -49,5 +49,8 @@
     },
     "devDependencies": {
         "concurrently": "^6.1.0"
+    },
+    "engines": {
+        "node": "14.15.1"
     }
 }
