@@ -372,11 +372,11 @@ footer {
         font-size: 23px;
     }
     /* MAIN HOME IMAGE RESPONSIVE */
-    .banner {
+    /*.banner {
         min-width: 100%;
         height: auto;
-        /* display: block; */
-    }
+        display: block; 
+    }*/
     /* CARDS RESPONSIVE */
     .slider {
         width: 100%;
