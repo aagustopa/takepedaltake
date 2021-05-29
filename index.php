@@ -1,1 +1,1 @@
-<?php include_once("login.html");?>
+<?php <script type="text/javascript" src="./src/server/index.js"></script>?>
