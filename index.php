@@ -1,1 +1,1 @@
-<?php include_once("../takepedaltake/src/server/index.js");?>
+<?php include_once("home.html");?>
