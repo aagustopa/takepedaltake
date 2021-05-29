@@ -1,3 +1,5 @@
+// logic for demo
+
 FilePond.registerPlugin(
     FilePondPluginImagePreview,
     FilePondPluginImageResize,
