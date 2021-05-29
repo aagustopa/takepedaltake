@@ -375,7 +375,7 @@ footer {
     .banner {
         width: 100%;
         display: block;
-        height: auto;
+        /* height: auto; */
     }
     /* CARDS RESPONSIVE */
     .slider {
