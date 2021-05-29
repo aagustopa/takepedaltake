@@ -21,11 +21,9 @@ const app = express();
 // passport config
 require('./config/passport')(passport);
 
-// // static files
-// app.use(express.static('../assets'));
-app.use(express.static('C:/Users/aleja/OneDrive/Documents/takepedaltake/src/assets'));
-// app.use('/css', express.static(__dirname + 'assets/css'));
-app.use(express.static('C:/Users/aleja/OneDrive/Documents/takepedaltake/src/js'))
+// // static files (loading css and js)
+app.use(express.static(path.join(__dirname, '../assets')));
+app.use(express.static(path.join(__dirname, '../js')));
 
 // aqui digo que las vistas estan en la ruta public/views
 // const outsitePath = 'C:/Users/aleja/OneDrive/Documents/takepedaltake/src/public/views';
