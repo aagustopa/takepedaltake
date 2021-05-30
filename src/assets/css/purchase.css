@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+    background: #F1F1F1;
+}
+
+
+/* NAVBAR */
+
+
+/* hacer ruta de codigo html */
+
+.content {
+    /* max-width: 1250px;
+    margin: auto;
+    padding: 0px 30px; */
+    box-shadow: none;
+    border: none;
+    line-height: initial;
+    max-width: 1250px;
+    margin: auto;
+    padding: 0px 30px;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    padding: 25px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+    padding: 10px 0;
+    background: #1b1b1b;
+}
+
+.navbar .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    /* separating logo from menu navbar because of bootstrap */
+    margin-right: 550px;
+}
+
+.navbar .menu-list {
+    display: inline-flex;
+    /* margin-top: 40px; */
+}
+
+.menu-list li {
+    list-style: none;
+    /* margin-top: 10px; */
+}
+
+.menu-list li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 20px;
+    margin-right: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu-list li a:hover {
+    color: #96b0fd;
+}
+
+
+/* making li menu in middle of menu */
+
+
+/* .navbar>.content>.menu-list>li {
+    margin-top: 10px;
+} */
+
+
+/* banner with tag img */
+
+.banner {
+    /* width: 100%; */
+    /* height: 100%; */
+    /* height: 100vh; */
+    /* background: url("../img/landing.jpg") no-repeat; */
+    /* background: no-repeat; */
+    /* background: url("https://images.unsplash.com/photo-1461783697079-622c15da8c47?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80") no-repeat; */
+    display: block;
+    width: 100%;
+    /* height: 100%; */
+    height: 37vh;
+    object-fit: cover;
+    background: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.center {
+    position: absolute;
+    /* top: 52%; */
+    top: 20%;
+    left: 50%;
+    width: 27%;
+    transform: translate(-50%, -50%);
+    padding: 0 20px;
+    text-align: center;
+    background-color: #000;
+}
+
+.center .title {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    /* background-color: #000;
+    width: 20%; */
+}
+
+
+/* banner with div */
+
+
+/* .banner{
+    height: 100vh;
+    background:url("../img/landing.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+} */
+
+.about {
+    padding: 40px 0;
+    background: white;
+}
+
+.about .title {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.about p {
+    padding-top: 20px;
+    text-align: justify;
+}
+
+.icon {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.icon.cancel-btn {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+
+
+/* CARDS */
+
+.slider {
+    max-width: 1150px;
+    display: flex;
+    margin-left: 135px;
+    margin-top: 50px;
+    margin: 50px 0px 0px 135px;
+    margin-bottom: 50px;
+}
+
+.slider .card {
+    flex: 1;
+    margin: 0 10px;
+    background: #fff;
+}
+
+.slider .card .img {
+    /* height: 200px; */
+    height: 400px;
+    width: 100%;
+}
+
+.slider .card .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slider .card .content {
+    padding: 10px 20px;
+}
+
+.card .content .title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.card .content .sub-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #96b0fd;
+    line-height: 20px;
+}
+
+.card .content p {
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.card .content .btn {
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.card .content .btn button {
+    background: #96b0fd;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.card .content .btn button:hover {
+    transform: scale(0.9);
+}
+
+
+/* FOOTER */
+
+.content1 {
+    position: relative;
+    margin: 130px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.content1 .text {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #202020;
+}
+
+.content1 .p {
+    font-size: 2.1875rem;
+    font-weight: 600;
+    color: #202020;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background: #1b1b1b;
+}
+
+.main-content {
+    display: flex;
+    color: whitesmoke;
+}
+
+.main-content .box {
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+.box h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.box .content {
+    margin: 20px 0 0 0;
+    position: relative;
+}
+
+.box .content:before {
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+}
+
+.box .content:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #96b0fd;
+    top: -10px;
+}
+
+.left .content p {
+    text-align: justify;
+}
+
+.left .content .social {
+    margin: 20px 0 0 0;
+}
+
+.left .content .social a {
+    padding: 0 2px;
+}
+
+.left .content .social a span {
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+    color: #96b0fd;
+}
+
+.left .content .social a span:hover {
+    background: #96b0fd;
+    color: white;
+}
+
+.center .content .fas {
+    font-size: 1.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.center .content .fas:hover {
+    background: #96b0fd;
+}
+
+.center .content .text {
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.center .content .phone {
+    margin: 15px 0;
+}
+
+@media (max-width: 868px) {
+    /* NAVBAR RESPONSIVE */
+    body.disabledScroll {
+        overflow: hidden;
+    }
+    .icon {
+        display: block;
+    }
+    .icon.hide {
+        display: none;
+    }
+    .navbar .menu-list {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* height: 100%; */
+        height: 100vh;
+        width: 100%;
+        max-width: 400px;
+        background: #222;
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu-list.active {
+        left: 0%;
+    }
+    .navbar .menu-list li {
+        margin-top: 45px;
+    }
+    .navbar .menu-list li a {
+        font-size: 23px;
+    }
+    /* SEPARATING LOGO WITH MENU ICON */
+    .navbar .logo a {
+        /* separating logo from menu navbar because of bootstrap */
+        margin-right: 80px;
+    }
+    /* MAIN HOME IMAGE RESPONSIVE */
+    .banner {
+        min-width: 100%;
+        height: 50vh;
+        display: block;
+    }
+    /* TEXT IMAGE CENTER */
+    .center {
+        position: absolute;
+        /* top: 52%; */
+        top: 28%;
+        left: 50%;
+        width: 60%;
+        transform: translate(-50%, -50%);
+        padding: 0 20px;
+        text-align: center;
+        background-color: #000;
+        word-break: break-all;
+    }
+    .center>.title {
+        font-size: 37px;
+    }
+    /* FIRST CARDS RESPONSIVE */
+    .about2 {
+        display: block;
+        width: 100%;
+        height: 50vh;
+        border-bottom: 2px solid white;
+    }
+    .about2>.content>h1 {
+        color: whitesmoke;
+        /* font-size: 12px; */
+        max-width: 350px;
+        width: 85%;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        /* right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0; */
+        margin: auto;
+        text-align: center;
+        font-size: 40px;
+    }
+    .about2>.content>h2 {
+        color: whitesmoke;
+        /* font-size: 12px; */
+        max-width: 350px;
+        width: 85%;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        /* right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0; */
+        margin: auto;
+        text-align: center;
+        font-size: 25px;
+    }
+    /* si comento este bloque solo aparecerán los 3 cards negros pero en responsive */
+    .photo:nth-child(2) {
+        display: block;
+        width: 100%;
+        height: 55vh;
+        background: url("../img/newpedal.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    /* .about2>.photo:nth-child() {
+        display: block;
+        width: 100%;
+        height: 55vh;
+        background: url("../img/newpedal.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .about2>.photo:nth-child() {
+        display: block;
+        width: 100%;
+        height: 55vh;
+        background: url("../img/newpedal.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+    } */
+    /* .photo:nth-child(1) {
+        width: 100%;
+        height: 55vh;
+        background: url("../img/newnewpedal.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+    } */
+    /* CARDS RESPONSIVE */
+    .slider {
+        width: 100%;
+        display: block;
+        margin-left: 0px;
+        padding: 30px;
+    }
+    .slider .card {
+        margin-bottom: 30px;
+    }
+    /* FOOTER RESPONSIVE */
+    footer {
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box {
+        margin: 5px 0;
+    }
+}
