@@ -5,61 +5,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/post.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="/index.js" defer></script>
-    <title>Posts</title>
+    <script defer src="/index.js"></script>
+    <style>
+        .padding_zero {
+            padding: 0;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- <div class="container-fluid padding_zero">
+        <div class="row">
+            <div class="col">
+                1 of 2
+            </div>
+            <div class="col">
+                2 of 2
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                1 of 3
+            </div>
+            <div class="col">
+                2 of 3
+            </div>
+            <div class="col">
+                3 of 3
+            </div>
+        </div>
+    </div> -->
+    <!-- <div class="container-fluid padding_zero"> -->
     <nav class="navbar">
         <div class="content">
             <div class="logo"><a href="#">TakePedalTake</a></div>
-            <ul class="menu-list">
+            <ul class="menu-list mt-3">
                 <div class="icon cancel-btn">
                     <i class="fas fa-times"></i>
                 </div>
-                <li><a href="#">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="/post/">Posts</a></li>
                 <li><a href="#">Compraventa</a></li>
-                <li><a href="/user/register">Login</a></li>
-                <li><a href="/user/profile">Profile</a></li>
+                <% if(user){%>
+                    <li><a href="/user/profile">Profile</a></li>
+                    <%} else{%>
+                        <li><a href="/user/register">Login</a></li>
+                        <%}%>
             </ul>
             <div class="icon menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
-
-    <div class="banner"></div>
-    <!-- <div class="about2">
-        <div class="content">
-            <h1>Posts</h1>
-            <h2>Información sobre pedales</h2>
-        </div>
-        <div class="photo">
-            <img src="./src/assets/img/pedal1.jpg" alt="">
+    <!-- <div class="banner"></div> -->
+    <img src="/img/post.jpg" alt="landing image" class="banner">
+    <div class="center">
+        <div class="title">POSTS</div>
+    </div>
+    <div class="container">
+        <div class="card text-center mt-3">
+            <div class="card-header">
+                <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Favoritos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card border-primary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card border-primary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="about2">
-        <div class="photo">
-            <img src="./src/assets/img/pedal2.jpg" alt="" width="650px">
-        </div>
-        <div class="content">
-            <h1>Compraventa</h1>
-            <h2>Compra o alquila pedales</h2>
-        </div>
-    </div>
-    <div class="about2">
-        <div class="content">
-            <h1>Demo</h1>
-            <h2>Para ti, curioso</h2>
-        </div>
-        <div class="photo">
-            <img src="./src/assets/img/pedal1.jpg" alt="">
-        </div>
-    </div> -->
     <%-include('carousel')%>
         <div class="about">
             <div class="content">
@@ -103,6 +141,7 @@
                 </div>
             </div>
         </footer>
+        <!-- </div> -->
 </body>
 
 </html>
