@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
 
 const roleSchema = mongoose.Schema({
-    name: String,
+    name: String
 });
-/*{
-    versionKey:false
-} */
 
 module.exports = mongoose.model('Role', roleSchema);

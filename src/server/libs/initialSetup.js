@@ -12,7 +12,7 @@ module.exports.createRoles = async() => {
             new Role({ name: 'admin' }).save()
         ])
         console.log(values);
-    } catch (error) {
-        console.error(error);
+    } catch (err) {
+        console.error(err);
     }
 }

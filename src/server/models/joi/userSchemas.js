@@ -16,7 +16,8 @@ module.exports = {
         email: Joi.string().email().required(),
         password: Joi.string().min(4).max(15).required(),
         repeat_password: Joi.ref('password'),
-        birthDate: Joi.date().required()
+        birthDate: Joi.date().required(),
+        roles: Joi.array().items(Joi.string().optional())
     }),
     update: Joi.object({
         firstName: Joi.string().alphanum().max(20).min(2).optional(),
