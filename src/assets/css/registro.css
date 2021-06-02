@@ -99,6 +99,7 @@ body {
     background: url('../img/newpedal.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+    filter: brightness(70%);
     /* background-size: 100% auto !important; */
     /* animation: breath 4s linear infinite; */
 }

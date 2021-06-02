@@ -73,6 +73,7 @@ app.get('/', function(req, res) {
     res.render('home')
 });
 
+// app.use('/api/v1/user', require('./routes/userRoutes'));
 app.use('/user', require('./routes/userRoutes'));
 app.use('/post', require('./routes/postRoutes'));
 app.use('/compraventa', require('./routes/purchaseRoutes'));

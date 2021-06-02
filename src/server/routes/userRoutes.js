@@ -19,10 +19,9 @@ router.get('/list',
     joiSchemaValidation.validate(userSchema.getUserListSchema, 'query'),
     userController.getAllUsers);
 
-router.get('/create',
-    // joiSchemaValidation.validate(userSchema.createUserSchema, `body`),
-    // userController.create);
-);
+// router.post('/create',
+//     joiSchemaValidation.validate(userSchema.create, `body`),
+//     userController.create);
 
 router.get('/login', ensureGuest, (req, res) => {
     res.render('user/login');
@@ -53,7 +52,6 @@ router.get('/logout', (req, res) => {
     req.logout();
     req.flash('success_msg', 'You are logged out');
     res.redirect('login');
-    // res.send('cerraste sesion putito');
 })
 
 
