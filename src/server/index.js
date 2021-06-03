@@ -76,7 +76,7 @@ app.get('/', function(req, res) {
 // app.use('/api/v1/user', require('./routes/userRoutes'));
 app.use('/user', require('./routes/userRoutes'));
 app.use('/post', require('./routes/postRoutes'));
-app.use('/compraventa', require('./routes/purchaseRoutes'));
+app.use('/compraventa', require('./routes/pedalRoutes'));
 app.use('/demo', require('./routes/demoRoutes'));
 
 // 404 not found
