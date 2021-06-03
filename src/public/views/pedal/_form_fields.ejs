@@ -1,0 +1,39 @@
+<div class="form-group">
+    <label for="name">Name</label>
+    <input required value="<%=post.title%>" type="text" name="name" id="name" class="form-control">
+</div>
+<div class="form-group">
+    <label for="description">Description</label>
+    <textarea type="text" required name="description" id="description" class="form-control"><%=post.description%></textarea>
+</div>
+<div class="form-group mb-3">
+    <label for="category">Category</label>
+    <input type="text" value=" <%=post.markdown%>" required name="category" id="category" class="form-control">
+</div>
+<div class="form-group">
+    <label for="state">State</label>
+    <input type="text" value="<%=post.description%>" required name="state" id="state" class="form-control">
+</div>
+<div class="form-group">
+    <label for="price">Price</label>
+    <input type="text" value="<%=post.description%>" required name="price" id="price" class="form-control">
+</div>
+
+<!-- https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
+
+<!-- https://getbootstrap.com/docs/5.0/forms/input-group/#checkboxes-and-radios -->
+<div class="form-group">
+    <label for="sell">Sell</label>
+    <input type="text" value="<%=post.description%>" required name="sell" id="sell" class="form-control">
+</div>
+<div class="form-group">
+    <label for="rent">Rent</label>
+    <input type="text" value="<%=post.description%>" required name="rent" id="rent" class="form-control">
+</div>
+<div class="form-group">
+    <label for="coverImageName">Cover</label>
+    <input type="file" required name="cover" id="cover" class="form-control">
+</div>
+
+<a href="/" class="btn btn-secondary">Cancel</a>
+<input type="submit" value="Save" class="btn btn-primary">
