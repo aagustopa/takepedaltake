@@ -1,38 +1,30 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-const multer = require('multer');
-const fs = require('fs');
 const Pedal = require('../models/db/pedalModel');
-const uploadPath = path.join(__dirname, '../../public', Pedal.coverImageBasePath);
 const imageMimeTypes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
-const upload = multer({
-    dest: uploadPath,
-    fileFilter: (req, file, callback) => {
-        callback(null, imageMimeTypes.includes(file.mimetype));
-    }
-})
+
 
 router.get('/', (req, res) => {
     res.render('pedal/pedals');
 });
 
 router.get('/all', async(req, res) => {
-    const pedal = await Pedal.find({});
-    console.log(pedal.coverImagePath);
-    /*const post = await Post.find({user:req.user.id}).sort({ createdAt: 'desc' });*/
-    res.render('pedal/all', { pedal: pedal });
+    // const pedal = await Pedal.find().sort({ createdAt: 'desc' });
+    try {
+        const pedals = await Pedal.find({});
+        res.render('pedal/all', {
+            pedals: pedals,
+        })
+    } catch {
+        res.redirect('/')
+    }
 })
 
 router.get('/new', (req, res) => {
-    console.log(path);
-    console.log(__dirname);
     res.render('pedal/new', { pedal: new Pedal() });
-    // res.render('post/new', { post: new Post() });
 });
 
-router.post('/create', upload.single('cover'), async(req, res) => {
-    const fileName = req.file != null ? req.file.filename : null;
+router.post('/create', async(req, res) => {
     const pedal = new Pedal({
         name: req.body.name,
         description: req.body.description,
@@ -41,26 +33,26 @@ router.post('/create', upload.single('cover'), async(req, res) => {
         brand: req.body.brand,
         price: req.body.price,
         sell: req.body.sell,
-        rent: req.body.rent,
-        coverImageName: fileName
+        rent: req.body.rent
     })
+    saveCover(pedal, req.body.cover)
 
     try {
         const newPedal = await pedal.save();
-        res.redirect('/compraventa')
+        res.redirect('/compraventa/all')
     } catch (err) {
-        if (pedal.coverImageName != null) {
-            removeBookCover(pedal.coverImageName);
-        }
         console.log(err);
         /*res.redirect('pedal/new');*/
     }
 });
 
-function removeBookCover(fileName) {
-    fs.unlink(path.join(uploadPath, fileName), err => {
-        if (err) console.error(err);
-    })
+function saveCover(pedal, coverEncoded) {
+    if (coverEncoded == null) return
+    const cover = JSON.parse(coverEncoded);
+    if (cover != null && imageMimeTypes.includes(cover.type)) {
+        pedal.coverImage = new Buffer.from(cover.data, 'base64');
+        pedal.coverImageType = cover.type;
+    }
 }
 
 module.exports = router;

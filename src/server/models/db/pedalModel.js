@@ -1,9 +1,5 @@
 const mongoose = require('mongoose');
 
-const path = require('path');
-
-const coverImageBasePath = 'uploads/pedalCovers';
-
 const pedalSchema = mongoose.Schema({
     name: {
         type: String,
@@ -37,7 +33,11 @@ const pedalSchema = mongoose.Schema({
         type: Boolean,
         default: false
     },
-    coverImageName: {
+    coverImage: {
+        type: Buffer,
+        required: true
+    },
+    coverImageType: {
         type: String,
         required: true
     },
@@ -48,8 +48,8 @@ const pedalSchema = mongoose.Schema({
 })
 
 pedalSchema.virtual('coverImagePath').get(function() {
-    if (this.coverImageName != null) {
-        return path.join(__dirname, '../../../public', coverImageBasePath, this.coverImageName);
+    if (this.coverImage != null && this.coverImageType != null) {
+        return `data:${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
     }
 })
 
@@ -59,5 +59,3 @@ pedalSchema.virtual('coverImagePath').get(function() {
 
 
 module.exports = mongoose.model('Pedal', pedalSchema);
-
-module.exports.coverImageBasePath = coverImageBasePath;

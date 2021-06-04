@@ -34,8 +34,10 @@ app.set('view engine', 'ejs');
 
 app.use(cors());
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
+// https://github.com/apostrophecms/apostrophe/issues/1291
+app.use(express.json({ limit: '50mb', extended: true }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(methodOverride('_method'));
 
 connect.createConnection();
