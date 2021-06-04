@@ -1,3 +1,7 @@
+https://stackoverflow.com/questions/60982994/loop-in-nodejs-ejs
+
+https://www.google.com/search?q=ejs+foreach+bootstrap+cards+in+same+row&rlz=1C1CHBF_esES915ES915&oq=ejs+foreach+bootstrap+cards+in+same+row&aqs=chrome..69i57.7999j1j1&sourceid=chrome&ie=UTF-8
+
 *for loop*
 WORKS PERO NO ME CONVENCE 1000%
 	
