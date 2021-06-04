@@ -61,83 +61,97 @@
             </div>
         </div>
         <!-- first card row -->
-        <div class="row mb-4">
-            <div class="col-sm d-flex align-items-stretch">
-                <div class="card">
-                    <img class="card-img-top" src="/img/purchase4.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <% pedals.forEach(pedal=>{%>
+            <div class="row mb-4">
+                <div class="col-sm d-flex align-items-stretch">
+                    <div class="card">
+                        <img class="card-img-top" src="/img/purchase4.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%=pedal.title%>
+                            </h5>
+                            <p class="card-text">
+                                <%=pedal.description %>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+                <div class="col-sm d-flex align-items-stretch">
+                    <div class="card">
+                        <img class="card-img-top" src="/img/purchase5.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%=pedal.title%>
+                            </h5>
+                            <p class="card-text">
+                                <%=pedal.description %>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm d-flex align-items-stretch">
+                    <div class="card">
+                        <img class="card-img-top" src="/img/purchase6.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%=pedal.title%>
+                            </h5>
+                            <p class="card-text">
+                                <%=pedal.description %>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm d-flex align-items-stretch">
-                <div class="card">
-                    <img class="card-img-top" src="/img/purchase5.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <%}) %>
+                <!-- second card row -->
+                <div class="row mb-4">
+                    <div class="col-sm d-flex align-items-stretch">
+                        <div class="card">
+                            <img class="card-img-top" src="/img/purchase2.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                    <div class="col-sm d-flex align-items-stretch">
+                        <div class="card">
+                            <img class="card-img-top" src="/img/purchase3.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm d-flex align-items-stretch">
-                <div class="card">
-                    <img class="card-img-top" src="/img/purchase6.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- second card row -->
-        <div class="row mb-4">
-            <div class="col-sm d-flex align-items-stretch">
-                <div class="card">
-                    <img class="card-img-top" src="/img/purchase2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm d-flex align-items-stretch">
-                <div class="card">
-                    <img class="card-img-top" src="/img/purchase3.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                    <div class="col-sm d-flex align-items-stretch">
+                        <div class="card">
+                            <img class="card-img-top" src="/img/purchase7.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm d-flex align-items-stretch">
-                <div class="card">
-                    <img class="card-img-top" src="/img/purchase7.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="about">
         <div class="content">

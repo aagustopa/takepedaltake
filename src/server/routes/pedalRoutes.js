@@ -4,8 +4,16 @@ const Pedal = require('../models/db/pedalModel');
 const imageMimeTypes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
 
 
-router.get('/', (req, res) => {
-    res.render('pedal/pedals');
+router.get('/', async(req, res) => {
+    try {
+        const pedals = await Pedal.find({});
+        res.render('pedal/pedals', {
+            pedals: pedals,
+        })
+    } catch {
+        res.redirect('/')
+    }
+    // res.render('pedal/pedals');
 });
 
 router.get('/all', async(req, res) => {

@@ -4,7 +4,7 @@ module.exports = {
         if (req.isAuthenticated()) {
             return next();
         }
-        req.flash('error_msg', 'Necesitas inciar sesión para crear un post');
+        req.flash('error_msg', 'Necesitas inciar sesión antes');
         res.redirect('../user/login');
     },
     ensureGuest: (req, res, next) => {
