@@ -6,16 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Create Pedal</title>
+    <title>All Pedals</title>
 </head>
 
 <body>
     <div class="container">
-        <h1>Create New Pedal</h1>
-
-        <form action="/compraventa/create" method="POST" enctype="multipart/form-data">
-            <%- include('_form_fields') %>
-        </form>
+        <h2>Listado de pedales</h2>
+        <% pedal.forEach(pedal => {%>
+            <div>
+                <img height="150" width="100" src="<%=pedal.coverImagePath %>" alt="pedal">
+            </div>
+            <div class="card-text mb-2">
+                <%=pedal.description %>
+            </div>
+            <% })%>
     </div>
 </body>
 

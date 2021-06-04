@@ -1,22 +1,26 @@
 <div class="form-group">
     <label for="name">Name</label>
-    <input required value="<%=post.title%>" type="text" name="name" id="name" class="form-control">
+    <input required value="<%=pedal.name%>" type="text" name="name" id="name" class="form-control">
 </div>
 <div class="form-group">
     <label for="description">Description</label>
-    <textarea type="text" required name="description" id="description" class="form-control"><%=post.description%></textarea>
+    <textarea type="text" required name="description" id="description" class="form-control"><%=pedal.description%></textarea>
 </div>
 <div class="form-group mb-3">
     <label for="category">Category</label>
-    <input type="text" value=" <%=post.markdown%>" required name="category" id="category" class="form-control">
+    <input type="text" value=" <%=pedal.category%>" required name="category" id="category" class="form-control">
 </div>
 <div class="form-group">
     <label for="state">State</label>
-    <input type="text" value="<%=post.description%>" required name="state" id="state" class="form-control">
+    <input type="text" value="<%=pedal.state%>" required name="state" id="state" class="form-control">
+</div>
+<div class="form-group">
+    <label for="brand">Brand</label>
+    <input type="text" value="<%=pedal.brand%>" required name="brand" id="brand" class="form-control">
 </div>
 <div class="form-group">
     <label for="price">Price</label>
-    <input type="text" value="<%=post.description%>" required name="price" id="price" class="form-control">
+    <input type="text" value="<%=pedal.price%>" required name="price" id="price" class="form-control">
 </div>
 
 <!-- https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
@@ -24,14 +28,14 @@
 <!-- https://getbootstrap.com/docs/5.0/forms/input-group/#checkboxes-and-radios -->
 <div class="form-group">
     <label for="sell">Sell</label>
-    <input type="text" value="<%=post.description%>" required name="sell" id="sell" class="form-control">
+    <input type="text" value="<%=pedal.sell%>" required name="sell" id="sell" class="form-control">
 </div>
 <div class="form-group">
     <label for="rent">Rent</label>
-    <input type="text" value="<%=post.description%>" required name="rent" id="rent" class="form-control">
+    <input type="text" value="<%=pedal.rent%>" required name="rent" id="rent" class="form-control">
 </div>
 <div class="form-group">
-    <label for="coverImageName">Cover</label>
+    <label for="cover">Cover</label>
     <input type="file" required name="cover" id="cover" class="form-control">
 </div>
 

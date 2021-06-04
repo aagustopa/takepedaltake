@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 
+const path = require('path');
+
+const coverImageBasePath = 'uploads/pedalCovers';
+
 const pedalSchema = mongoose.Schema({
     name: {
         type: String,
@@ -43,8 +47,17 @@ const pedalSchema = mongoose.Schema({
     }
 })
 
+pedalSchema.virtual('coverImagePath').get(function() {
+    if (this.coverImageName != null) {
+        return path.join(__dirname, '../../../public', coverImageBasePath, this.coverImageName);
+    }
+})
+
 // make conditional or validation
 // that if there's no sell or rent then error
 // there must be one of them or both
 
+
 module.exports = mongoose.model('Pedal', pedalSchema);
+
+module.exports.coverImageBasePath = coverImageBasePath;
