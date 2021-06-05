@@ -25,7 +25,9 @@
         <h2>Listado de pedales</h2>
         <% pedals.forEach(pedal => {%>
             <div>
-                <img height="150" width="100" src="<%=pedal.coverImagePath %>" alt="pedal">
+                <a href="/compraventa/<%=pedal._id %>">
+                    <img height="150" width="100" src="<%=pedal.coverImagePath %>" alt="pedal">
+                </a>
             </div>
             <div class="card-text mb-2">
                 <%=pedal.description %>

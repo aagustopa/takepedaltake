@@ -54,6 +54,16 @@ router.post('/create', async(req, res) => {
     }
 });
 
+router.get('/:id', async(req, res) => {
+    try {
+        const pedal = await Pedal.findById(req.params.id);
+        res.render('pedal/show', { book: book });
+    } catch (err) {
+        console.log(err);
+        res.redirect('pedals')
+    }
+})
+
 function saveCover(pedal, coverEncoded) {
     if (coverEncoded == null) return
     const cover = JSON.parse(coverEncoded);
