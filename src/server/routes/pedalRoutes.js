@@ -55,13 +55,21 @@ router.post('/create', async(req, res) => {
 });
 
 router.get('/:id', async(req, res) => {
-    try {
-        const pedal = await Pedal.findById(req.params.id);
-        res.render('pedal/show', { book: book });
-    } catch (err) {
-        console.log(err);
-        res.redirect('pedals')
-    }
+    // try {
+    //     const pedal = await Pedal.findById(req.params.id);
+    //     res.render('pedal/show', { book: book });
+    // } catch (err) {
+    //     res.send(err);
+    //     res.redirect('/pedals')
+    // }
+    const pedal = await Pedal.findById(req.params.id);
+    if (pedal == null) res.redirect('/');
+    res.render('pedal/show', { pedal: pedal });
+});
+
+
+router.get('/update/:id', async(req, res) => {
+    res.send('editando anuncio pedal');
 })
 
 function saveCover(pedal, coverEncoded) {
