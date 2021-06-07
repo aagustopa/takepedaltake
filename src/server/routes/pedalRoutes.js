@@ -70,6 +70,12 @@ router.get('/:id', async(req, res) => {
 
 router.get('/update/:id', async(req, res) => {
     res.send('editando anuncio pedal');
+});
+
+
+router.delete('/:id', async(req, res) => {
+    await Pedal.findByIdAndDelete(req.params.id)
+    res.redirect('/compraventa/all')
 })
 
 function saveCover(pedal, coverEncoded) {

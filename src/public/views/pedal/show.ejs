@@ -61,7 +61,10 @@
                                 <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Alquilar</label>
                             </div> -->
                                                 <% if(user){%>
-                                                    <a href="/compraventa/update/<%=pedal.id %> " class="btn btn-primary mb-4">Editar</a>
+                                                    <a href="/compraventa/update/<%=pedal.id %> " class="btn btn-primary">Editar</a>
+                                                    <form action="/compraventa/<%=pedal.id%>?_method=DELETE" method="POST" class="d-inline">
+                                                        <input type="submit" class="btn btn-danger" value="Delete">
+                                                    </form>
                                                     <%} %>
                                                         <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                                                         <p class="card-text"><small class="text-muted">Publicado el <%=pedal.createdAt.toDateString() %> </small></p>
