@@ -69,9 +69,60 @@ router.get('/:id', async(req, res) => {
 
 
 router.get('/update/:id', async(req, res) => {
-    res.send('editando anuncio pedal');
+    const pedal = await Pedal.findById(req.params.id);
+    res.render('pedal/edit', { pedal: pedal });
 });
 
+router.put('/:id', async(req, res) => {
+    let pedal;
+
+    try {
+        pedal = await Pedal.findById(req.params.id);
+        pedal.name = req.body.name
+        pedal.description = req.body.description
+        pedal.category = req.body.category
+        pedal.state = req.body.state
+        pedal.brand = req.body.brand
+        pedal.price = req.body.price
+        pedal.sell = req.body.sell
+        pedal.rent = req.body.rent
+        if (req.body.cover != null && req.body.cover != '') {
+            saveCover(pedal, req.body.cover)
+        }
+        await pedal.save();
+        res.redirect(`/compraventa/${pedal.id}`);
+    } catch (err) {
+        console.log(err);
+        if (pedal != null) {
+            res.redirect(`compraventa/update/${pedal.id}`)
+        } else {
+            res.redirect('compraventa/all')
+        }
+        // console.log(err);
+        /*res.redirect('pedal/new');*/
+    }
+});
+
+// router.put('/update/:id', async(req, res) => {
+//     req.pedal = await Pedal.findById(req.params.id);
+//     let pedal = req.pedal
+//     pedal.name = req.body.name
+//     pedal.description = req.body.description
+//     pedal.category = req.body.category
+//     pedal.state = req.body.state
+//     pedal.brand = req.body.brand
+//     pedal.price = req.body.price
+//     pedal.sell = req.body.sell
+//     pedal.rent = req.body.rent
+
+//     try {
+//         const updatingPedal = await pedal.save();
+//         res.redirect('compraventa/all')
+//     } catch (e) {
+//         console.log(e);
+//         res.render('compraventa/update/:id', { pedal: pedal });
+//     }
+// });
 
 router.delete('/:id', async(req, res) => {
     await Pedal.findByIdAndDelete(req.params.id)
