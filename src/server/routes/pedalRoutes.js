@@ -103,27 +103,6 @@ router.put('/:id', async(req, res) => {
     }
 });
 
-// router.put('/update/:id', async(req, res) => {
-//     req.pedal = await Pedal.findById(req.params.id);
-//     let pedal = req.pedal
-//     pedal.name = req.body.name
-//     pedal.description = req.body.description
-//     pedal.category = req.body.category
-//     pedal.state = req.body.state
-//     pedal.brand = req.body.brand
-//     pedal.price = req.body.price
-//     pedal.sell = req.body.sell
-//     pedal.rent = req.body.rent
-
-//     try {
-//         const updatingPedal = await pedal.save();
-//         res.redirect('compraventa/all')
-//     } catch (e) {
-//         console.log(e);
-//         res.render('compraventa/update/:id', { pedal: pedal });
-//     }
-// });
-
 router.delete('/:id', async(req, res) => {
     await Pedal.findByIdAndDelete(req.params.id)
     res.redirect('/compraventa/all')
