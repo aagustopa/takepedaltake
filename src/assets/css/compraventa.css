@@ -70,8 +70,9 @@ body {
     color: #fff;
     font-size: 18px;
     font-weight: 500;
-    margin-left: 20px;
-    margin-right: 8px;
+    margin-left: 18px;
+    /* margin-right: 8px; */
+    margin-right: 18px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
