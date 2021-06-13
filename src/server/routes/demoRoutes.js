@@ -8,8 +8,8 @@ router.get('/', (req, res) => {
     res.render('demo/demo');
 })
 
-router.get('/create', ensureAuthenticated, isAdmin, (req, res) => {
-    res.render('demo/create');
+router.get('/adminPanel', ensureAuthenticated, isAdmin, (req, res) => {
+    res.render('admin/adminPanel');
     // res.send('Aqui solo puede entrar el admin, putitos not allowed');
 })
 

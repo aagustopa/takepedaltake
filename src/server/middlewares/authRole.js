@@ -16,11 +16,17 @@ module.exports = {
                 return;
             }
             // else {
+            //     req.flash('role_error', 'Sorry, you are not allowed to create demos, only admins can.');
+            //     res.redirect('../demo/#section');
+            // }
+            // else {
             //     res.redirect('/');
             //     console.log('No eres admin');
             // }
         }
-        return res.status(403).json({ message: 'Sorry putito, only admins allowed' });
+        req.flash('role_error', 'Sorry, you are not allowed to create demos, only admins can.');
+        res.redirect('../demo/#section');
+        // return res.status(403).json({ message: 'Sorry putito, only admins allowed' });
     },
     isModerator: async(req, res, next) => {
         const user = await User.findById(req.userId);
