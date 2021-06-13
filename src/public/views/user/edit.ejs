@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Update User</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Actualice sus datos</h2>
+        <%- include('../partials/messages'); %>
+            <div class="row justify-content-center">
+                <form action="/user/<%=user.id %>?_method=PUT" method="POST">
+                    <div class="col-md-4 border border-dark rounded" style="background-color: rgb(147, 178, 255);">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input value="<%=user.firstName%>" type="text" name="firstName" id="firstName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input value="<%=user.lastName %>" name="lastName" id="lastName" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email">Email</label>
+                            <input value="<%=user.email %>" name="email" id="email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4 align-items-stretch border border-dark">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input value="<%=user.password %> " type="password" name="password" id="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="repeat_password">Repeat password</label>
+                            <input type="password" name="repeat_password" id="repeat_password" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="birthDate">Birth Date</label>
+                            <input type="date" value="<%=user.birthDate%>" name="birthDate" id="birthDate" class="form-control">
+                        </div>
+                    </div>
+            </div>
+            <a href="/user/profile" class="btn btn-secondary">Cancel</a>
+            <input type="submit" value="Save" class="btn btn-primary">
+            </form>
+    </div>
+</body>
+
+</html>

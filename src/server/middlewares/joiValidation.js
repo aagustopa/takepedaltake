@@ -1,14 +1,30 @@
 module.exports.validate = (schema) => {
     return async(req, res, next) => {
-        let putito = [];
+        let errors = [];
         try {
             await schema.validateAsync(req.body);
             next();
         } catch (error) {
             console.log(error);
-            putito.push(error.message);
-            if (putito.length > 0) {
-                res.render('user/register', { putito });
+            errors.push(error.message);
+            if (errors.length > 0) {
+                res.render('user/register', { errors });
+            }
+        }
+    }
+}
+
+module.exports.validateUpdate = (schema) => {
+    return async(req, res, next) => {
+        let errors = [];
+        try {
+            await schema.validateAsync(req.body);
+            next();
+        } catch (error) {
+            console.log(error);
+            errors.push(error.message);
+            if (errors.length > 0) {
+                res.render('user/edit', { errors });
             }
         }
     }

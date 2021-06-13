@@ -48,6 +48,17 @@ router.get('/profile', ensureAuthenticated, (req, res) =>
     res.render('user/profile')
 );
 
+router.get('/update/:id', async(req, res) => {
+    const user = await User.findById(req.params.id);
+    res.render('user/edit', { user: user });
+})
+
+router.put('/:id',
+    joiSchemaValidation.validate(userSchema.id, 'params'),
+    validatingJoi.validateUpdate(userSchema.update),
+    userController.update
+);
+
 router.get('/logout', (req, res) => {
     req.logout();
     req.flash('success_msg', 'You are logged out');

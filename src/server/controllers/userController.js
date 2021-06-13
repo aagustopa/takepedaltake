@@ -85,3 +85,46 @@ module.exports.create = async(req, res) => {
     }
     res.status(responseObj.status).send(responseObj);
 }
+
+module.exports.update = async(req, res) => {
+    module.exports.update = async function(req, res) {
+        const response = { status: 500, msg: 'Server Error' };
+        try {
+            const hashPwd = await bcrypt.hash(req.body.password, 10);
+            const adminRole = req.body.roles
+            const data = {
+                id: req.params.id,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                password: hashPwd,
+                birthDate: req.body.birthDate,
+                roles: adminRole
+            };
+            // const data = req.body;
+            // data.id = req.params.id;
+            const emailUser = await User.findOne({ email: data.email });
+            if (emailUser) {
+                req.flash('error_msg', 'Ese email ya existe');
+                res.redirect('register');
+            } else {
+                const responseFromService = await userService.update(data);
+                if (responseFromService.status === 200) {
+                    response.msg = 'User updated successfully';
+                    response.body = responseFromService.result; //doc guardat
+                    req.flash('success_msg', 'Usuario actualizado correctamente');
+                    res.redirect('profile');
+                } else if (responseFromService.status === 404) {
+                    response.msg = 'User not found';
+                } else {
+                    response.msg = responseFromService.error;
+                }
+                response.status = responseFromService.status;
+            }
+        } catch (err) {
+            response.msg = err;
+            console.log(`ERROR-userController-update: ${err}`);
+        }
+        res.status(response.status).send(response);
+    }
+}

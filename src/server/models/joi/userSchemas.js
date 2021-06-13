@@ -24,6 +24,11 @@ module.exports = {
         lastName: Joi.string().max(20).min(2).optional(),
         email: Joi.string().email().optional(),
         password: Joi.string().min(4).max(15).optional(),
+        repeat_password: Joi.ref('password'),
         birthDate: Joi.date().optional(),
+        roles: Joi.array().items(Joi.string().optional())
+    }),
+    id: Joi.object({
+        id: Joi.objectId()
     })
 }
