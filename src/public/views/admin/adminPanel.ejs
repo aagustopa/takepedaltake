@@ -43,13 +43,17 @@
                 <hr>
                 <div class="d-grid gap-2">
                     <a href="/demo/create/" class="btn btn-success btn-lg" type="button">Crear demo del mes</a>
-                    <a href="/demo/update/<%=user.id %>" class="btn btn-primary btn-lg">Editar demo del mes</a>
-                    <form action="/user/<%=user.id%>?_method=DELETE" method="POST" class="d-inline">
-                        <input type="submit" class="btn btn-danger btn-lg" value="Borrar demo del mes">
-                    </form>
-                    <!-- <button class="btn btn-danger" type="button">Borrar demo del mes</button> -->
-                    <a href="/user/update/<%=user.id %>" class="btn btn-warning btn-lg">Ver todos los usuarios registrados</a>
-                    <!-- <button class=" btn btn-warning " type="button "></button> -->
+                    <% if(demo){%>
+                        <a href="/demo/update/<%=demo.id %>" class="btn btn-primary btn-lg">Editar demo del mes</a>
+                        <form action="/demo/<%=demo.id%>?_method=DELETE" method="POST" class="d-inline">
+                            <input type="submit" class="btn btn-danger btn-lg" value="Borrar demo del mes">
+                        </form>
+                        <%} else{%>
+                            <hr>
+                            <%}%>
+                                <!-- <button class="btn btn-danger" type="button">Borrar demo del mes</button> -->
+                                <a href="/user/update/<%=user.id %>" class="btn btn-warning btn-lg">Ver todos los usuarios registrados</a>
+                                <!-- <button class=" btn btn-warning " type="button "></button> -->
                 </div>
                 <hr>
                 <div class="d-grid gap-2 d-md-block mb-3">

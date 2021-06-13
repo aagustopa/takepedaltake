@@ -22,6 +22,10 @@ const demoSchema = mongoose.Schema({
         type: Buffer,
         required: true
     },
+    coverImageType: {
+        type: String,
+        required: true
+    },
     subtitle2: {
         type: String,
         required: true
@@ -32,6 +36,10 @@ const demoSchema = mongoose.Schema({
     },
     coverImage2: {
         type: Buffer,
+        required: true
+    },
+    coverImageType2: {
+        type: String,
         required: true
     },
     subtitle3: {
@@ -46,6 +54,10 @@ const demoSchema = mongoose.Schema({
         type: Buffer,
         required: true
     },
+    coverImageType3: {
+        type: String,
+        required: true
+    },
     subtitle4: {
         type: String,
         required: true
@@ -56,6 +68,10 @@ const demoSchema = mongoose.Schema({
     },
     coverImage4: {
         type: Buffer,
+        required: true
+    },
+    coverImageType4: {
+        type: String,
         required: true
     },
     finalTitle: {
@@ -71,5 +87,12 @@ const demoSchema = mongoose.Schema({
         default: Date.now
     }
 })
+
+// demoSchema.virtual('coverImagePath').get(function() {
+//     if (this.coverImage != null && this.coverImageType != null) {
+//         return `data:${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
+//     }
+// })
+
 
 module.exports = mongoose.model('Demo', demoSchema);

@@ -81,6 +81,7 @@ app.use('/user', require('./routes/userRoutes'));
 app.use('/post', require('./routes/postRoutes'));
 app.use('/compraventa', require('./routes/pedalRoutes'));
 app.use('/demo', require('./routes/demoRoutes'));
+app.use('/admin', require('./routes/adminRoutes'));
 
 // 404 not found
 app.get('**', (req, res) => {
