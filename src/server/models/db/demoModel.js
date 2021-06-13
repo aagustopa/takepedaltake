@@ -1,4 +1,4 @@
-const { optional } = require('joi');
+const { optional, string } = require('joi');
 const mongoose = require('mongoose');
 
 const demoSchema = mongoose.Schema({
@@ -10,15 +10,23 @@ const demoSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    subtitle: {
+        type: String,
+        required: true
+    },
+    subDescription: {
+        type: String,
+        required: true
+    },
     coverImage: {
         type: Buffer,
         required: true
     },
-    secondTitle: {
+    subtitle2: {
         type: String,
         required: true
     },
-    secondDescription: {
+    subDescription2: {
         type: String,
         required: true
     },
@@ -26,11 +34,11 @@ const demoSchema = mongoose.Schema({
         type: Buffer,
         required: true
     },
-    thirdTitle: {
+    subtitle3: {
         type: String,
         required: true
     },
-    thirdDescription: {
+    subDescription3: {
         type: String,
         required: true
     },
@@ -38,19 +46,23 @@ const demoSchema = mongoose.Schema({
         type: Buffer,
         required: true
     },
-    fourthTitle: {
+    subtitle4: {
         type: String,
-        required: optional
+        required: true
     },
-    fourthDescription: {
+    subDescription4: {
         type: String,
-        required: optional,
+        required: true
     },
     coverImage4: {
         type: Buffer,
-        required: optional
+        required: true
     },
-    coverImageType: {
+    finalTitle: {
+        type: String,
+        required: true
+    },
+    finalDescription: {
         type: String,
         required: true
     },
@@ -58,14 +70,6 @@ const demoSchema = mongoose.Schema({
         type: Date,
         default: Date.now
     }
-    // titulo
-    // descripcion 1
-    // foto 1
-    // titulo2
-    // descripcion2
-    // foto2
-    // description3
-    // foto3
 })
 
 module.exports = mongoose.model('Demo', demoSchema);
