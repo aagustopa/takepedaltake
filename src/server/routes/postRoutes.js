@@ -4,8 +4,8 @@ const router = express.Router();
 const { ensureAuthenticated, ensureGuest } = require('../middlewares/guard/authenticated');
 
 // boton ALL POST from vista showe.js not working (yet)
-router.get('/', async(req, res) => {
-    const post = await Post.find().sort({ createdAt: 'desc' });
+router.get('/', ensureAuthenticated, async(req, res) => {
+    const post = await Post.find({ user: req.user.id }).sort({ createdAt: 'desc' });
     /*const post = await Post.find({user:req.user.id}).sort({ createdAt: 'desc' });*/
     res.render('post/posts', { posts: post });
 })
@@ -60,6 +60,7 @@ function savePostAndRedirect(path) {
         post.title = req.body.title
         post.description = req.body.description
         post.markdown = req.body.markdown
+        post.user = req.user.id
         try {
             /*
             if(path==='new'){

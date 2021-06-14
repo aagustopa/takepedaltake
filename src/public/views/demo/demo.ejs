@@ -21,7 +21,10 @@
             color: white;
         }
         
-        #start,
+        #start {
+            height: 100vh;
+        }
+        
         #first,
         #second,
         #third,
@@ -69,184 +72,184 @@
     <div class="center">
         <div class="title"><a href="#start">DEMO</a></div>
     </div>
-    <div class="container-fluid">
-        <a href="/admin/adminPanel" style="text-decoration: none;">
-            <i class="bi bi-bookmark-plus-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
-        </a>
-        <%- include('../partials/messages'); %>
-    </div>
+    <!-- <div class="container-fluid">
+    </div> -->
     <div class="container mt-4">
         <section id="start">
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="card text-white bg-dark mb-3" style="margin-top:120px;">
-                        <div class="card-body">
-                            <h1 class="card-title text-center">La demo del mes</h1>
-                            <h5 class="card-subtitle mb-2 text-muted text-center">¿De que va?</h5>
-                            <p class="card-text">Una vez al mes sale este articulo especial cuyo objetivo es despertar el interés por experimentar con los pedales. Habrá demos de todo tipo de dificultades, desde usar un placa arduino para crear un loop de presets de un pedal
-                                hasta algo simple como controlar un delay de cinta con un pedal de expresión. Este mes empezamos por lo simple pero no por ello menos interesante. Coge tu pedal y disfruta de la demo, empieza cuando estés listo!
-                            </p>
-                            <a href="#first" class="btn btn-success mx-auto d-block mt-2 mb-2">Start</a>
+            <a href="/admin/adminPanel">
+                <i class="bi bi-bookmark-plus-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
+            </a>
+            <div class="row justify-content-center ">
+                <div class="col-md-4 ">
+                    <%- include('../partials/messages'); %>
+                        <div class="card text-white bg-dark mb-3 " style="margin-top:120px; ">
+                            <div class="card-body ">
+                                <h1 class="card-title text-center ">La demo del mes</h1>
+                                <h5 class="card-subtitle mb-2 text-muted text-center ">¿De que va?</h5>
+                                <p class="card-text ">Una vez al mes sale este articulo especial cuyo objetivo es despertar el interés por experimentar con los pedales. Habrá demos de todo tipo de dificultades, desde usar un placa arduino para crear un loop de presets de un
+                                    pedal hasta algo simple como controlar un delay de cinta con un pedal de expresión. Este mes empezamos por lo simple pero no por ello menos interesante. Coge tu pedal y disfruta de la demo, empieza cuando estés listo!
+                                </p>
+                                <a href="#first " class="btn btn-success mx-auto d-block mt-2 mb-2 ">Start</a>
+                            </div>
                         </div>
-                    </div>
                 </div>
-                <!-- <div class="col-2"></div> -->
-                <!-- <div class="col-md-4 align-items-stretch border border-dark">
-                    <h3 class="mt-4">Information</h3>
+                <!-- <div class="col-2 "></div> -->
+                <!-- <div class="col-md-4 align-items-stretch border border-dark ">
+                    <h3 class="mt-4 ">Information</h3>
                     <hr>
-                    <div class="w-100"></div>
+                    <div class="w-100 "></div>
                     <h5><strong>Email</strong></h5>
                 </div> -->
             </div>
         </section>
-        <section id="first">
-            <!-- <div class="card mb-3" style="max-width: 100%;"> -->
-            <div class="row justify-content-center" style="margin-top: 200px;">
-                <div class="col-md-6">
-                    <img src="/img/admin.jpg" alt="test" class="img-fluid">
+        <section id="first ">
+            <!-- <div class="card mb-3 " style="max-width: 100%; "> -->
+            <div class="row justify-content-center " style="margin-top: 200px; ">
+                <div class="col-md-6 ">
+                    <img src="/img/admin.jpg " alt="test " class="img-fluid ">
                 </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h5 class="card-title">
+                <div class="col-md-6 ">
+                    <div class="card-body ">
+                        <h5 class="card-title ">
                             <%=demo[0].title %>
                         </h5>
-                        <p class="card-text">
+                        <p class="card-text ">
                             <%=demo[0].description %>
                         </p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="#second" style="text-decoration: none;">
-                            <i class="bi bi-arrow-down-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <p class="card-text "><small class="text-muted ">Last updated 3 mins ago</small></p>
+                        <a href="#second " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-down-square-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
-                        <a href="#start" style="text-decoration: none;">
-                            <i class="bi bi-arrow-up-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <a href="#start " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-up-square-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
                     </div>
                 </div>
             </div>
             <!-- </div> -->
         </section>
-        <section id="second">
-            <div class="row" style="margin-top: 200px;">
-                <div class="col-md-6">
-                    <img src="/img/admin.jpg" alt="test" class="img-fluid">
+        <section id="second ">
+            <div class="row " style="margin-top: 200px; ">
+                <div class="col-md-6 ">
+                    <img src="/img/admin.jpg " alt="test " class="img-fluid ">
                 </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h5 class="card-title">
+                <div class="col-md-6 ">
+                    <div class="card-body ">
+                        <h5 class="card-title ">
                             <%=demo[0].subtitle %>
                         </h5>
-                        <p class="card-text">
+                        <p class="card-text ">
                             <%=demo[0].subDescription %>
                         </p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="#third" style="text-decoration: none;">
-                            <i class="bi bi-arrow-down-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <p class="card-text "><small class="text-muted ">Last updated 3 mins ago</small></p>
+                        <a href="#third " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-down-square-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
-                        <a href="#first" style="text-decoration: none;">
-                            <i class="bi bi-arrow-up-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <a href="#first " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-up-square-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="third">
-            <div class="row" style="margin-top: 200px;">
-                <div class="col-md-6">
-                    <img src="/img/admin.jpg" alt="test" class="img-fluid">
+        <section id="third ">
+            <div class="row " style="margin-top: 200px; ">
+                <div class="col-md-6 ">
+                    <img src="/img/admin.jpg " alt="test " class="img-fluid ">
                 </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h5 class="card-title">
+                <div class="col-md-6 ">
+                    <div class="card-body ">
+                        <h5 class="card-title ">
                             <%=demo[0].subtitle2 %>
                         </h5>
-                        <p class="card-text">
+                        <p class="card-text ">
                             <%=demo[0].subDescription2 %>
                         </p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="#fourth" style="text-decoration: none;">
-                            <i class="bi bi-arrow-down-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <p class="card-text "><small class="text-muted ">Last updated 3 mins ago</small></p>
+                        <a href="#fourth " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-down-square-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
-                        <a href="#second" style="text-decoration: none;">
-                            <i class="bi bi-arrow-up-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <a href="#second " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-up-square-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="fourth">
-            <div class="row" style="margin-top: 200px;">
-                <div class="col-md-6">
-                    <img src="/img/admin.jpg" alt="test" class="img-fluid">
+        <section id="fourth ">
+            <div class="row " style="margin-top: 200px; ">
+                <div class="col-md-6 ">
+                    <img src="/img/admin.jpg " alt="test " class="img-fluid ">
                 </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h5 class="card-title">
+                <div class="col-md-6 ">
+                    <div class="card-body ">
+                        <h5 class="card-title ">
                             <%=demo[0].subtitle3 %>
                         </h5>
-                        <p class="card-text">
+                        <p class="card-text ">
                             <%=demo[0].subDescription3 %>
                         </p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="#fifth" style="text-decoration: none;">
-                            <i class="bi bi-arrow-down-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <p class="card-text "><small class="text-muted ">Last updated 3 mins ago</small></p>
+                        <a href="#fifth " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-down-square-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
-                        <a href="#third" style="text-decoration: none;">
-                            <i class="bi bi-arrow-up-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <a href="#third " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-up-square-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="fifth">
-            <div class="row" style="margin-top: 200px;">
-                <div class="col-md-6">
-                    <img src="/img/admin.jpg" alt="test" class="img-fluid">
+        <section id="fifth ">
+            <div class="row " style="margin-top: 200px; ">
+                <div class="col-md-6 ">
+                    <img src="/img/admin.jpg " alt="test " class="img-fluid ">
                 </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h5 class="card-title">
+                <div class="col-md-6 ">
+                    <div class="card-body ">
+                        <h5 class="card-title ">
                             <%=demo[0].subtitle4 %>
                         </h5>
-                        <p class="card-text">
+                        <p class="card-text ">
                             <%=demo[0].subDescription4 %>
                         </p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="#sixth" style="text-decoration: none;">
-                            <i class="bi bi-arrow-down-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <p class="card-text "><small class="text-muted ">Last updated 3 mins ago</small></p>
+                        <a href="#sixth " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-down-square-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
-                        <a href="#fourth" style="text-decoration: none;">
-                            <i class="bi bi-arrow-up-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <a href="#fourth " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-up-square-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="sixth">
-            <div class="row" style="margin-top: 200px;">
-                <div class="col-md-6">
-                    <img src="/img/admin.jpg" alt="test" class="img-fluid">
+        <section id="sixth ">
+            <div class="row " style="margin-top: 200px; ">
+                <div class="col-md-6 ">
+                    <img src="/img/admin.jpg " alt="test " class="img-fluid ">
                 </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h5 class="card-title">
+                <div class="col-md-6 ">
+                    <div class="card-body ">
+                        <h5 class="card-title ">
                             <%=demo[0].finalTitle %>
                         </h5>
-                        <p class="card-text">
+                        <p class="card-text ">
                             <%=demo[0].finalDescription %>
                         </p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="#start" style="text-decoration: none;">
-                            <i class="bi bi-arrow-repeat" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <p class="card-text "><small class="text-muted ">Last updated 3 mins ago</small></p>
+                        <a href="#start " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-repeat " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
-                        <a href="#fifth" style="text-decoration: none;">
-                            <i class="bi bi-arrow-up-square-fill" style="font-size: 2rem; color: rgb(0, 0, 0);"></i>
+                        <a href="#fifth " style="text-decoration: none; ">
+                            <i class="bi bi-arrow-up-square-fill " style="font-size: 2rem; color: rgb(0, 0, 0); "></i>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4 " crossorigin="anonymous "></script>
 </body>
 
 </html>
