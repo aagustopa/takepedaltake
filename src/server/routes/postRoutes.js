@@ -10,8 +10,9 @@ router.get('/', async(req, res) => {
     res.render('test', { post: post });
 })
 
-router.get('/newview', (req, res) => {
-    res.render('post');
+router.get('/newview', async(req, res) => {
+    const post = await Post.find({});
+    res.render('post/posts', { posts: post });
 })
 
 router.get('/new', ensureAuthenticated, (req, res) => {
@@ -24,7 +25,7 @@ router.get('/turn/:id', async(req, res) => {
     const post = await Post.findById(id);
     post.favourite = !post.favourite;
     await post.save();
-    res.redirect('/post');
+    res.redirect('/post/newview');
 })
 
 router.get('/edit/:id', async(req, res) => {

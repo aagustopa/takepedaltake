@@ -47,7 +47,7 @@ router.post('/create', async(req, res) => {
 
     try {
         const newPedal = await pedal.save();
-        res.redirect('/compraventa/all')
+        res.redirect('/compraventa/')
     } catch (err) {
         console.log(err);
         /*res.redirect('pedal/new');*/
