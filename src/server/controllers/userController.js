@@ -39,9 +39,13 @@ module.exports.getAllUsers = async(req, res) => {
 //     }
 // }
 
-const sendToService = async(data) => {
-
-}
+// const sendToService = async(data) => {
+//     if (adminRole) {
+//         console.log('admin role');
+//         const foundRoles = await Role.find({ name: { $in: adminRole } });
+//         data.roles = foundRoles.map(role => role._id)
+//     }
+// }
 
 module.exports.create = async(req, res) => {
     console.log('creating user');
@@ -61,29 +65,24 @@ module.exports.create = async(req, res) => {
         if (emailUser) {
             req.flash('error_msg', 'Ese email ya existe');
             res.redirect('register');
-        }
-        if (adminRole) {
-            console.log('admin role');
-            const foundRoles = await Role.find({ name: { $in: adminRole } });
-            data.roles = foundRoles.map(role => role._id)
         } else {
             console.log('user role by default');
             const role = await Role.findOne({ name: "user" });
             data.roles = [role._id];
-        }
-        const responseFromService = await userService.create(data);
-        if (responseFromService.status) {
-            responseObj.body = responseFromService.result;
-            responseObj.msg = `User created succesfully`;
-            responseObj.status = 201;
-            req.flash('success_msg', 'Estas registrado, ya puedes logearte');
-            res.redirect('login');
+            const responseFromService = await userService.create(data);
+            if (responseFromService.status) {
+                responseObj.body = responseFromService.result;
+                responseObj.msg = `User created succesfully`;
+                responseObj.status = 201;
+                req.flash('success_msg', 'Estas registrado, ya puedes logearte');
+                res.redirect('login');
+            }
         }
     } catch (error) {
         responseObj.error = error;
         console.log(`ERROR-userController-create ${error}`);
     }
-    res.status(responseObj.status).send(responseObj);
+    // res.status(responseObj.status).send(responseObj);
 }
 
 module.exports.update = async(req, res) => {

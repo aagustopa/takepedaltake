@@ -44,9 +44,10 @@ router.post('/register',
     userController.create
 );
 
-router.get('/profile', ensureAuthenticated, (req, res) =>
-    res.render('user/profile')
-);
+router.get('/profile', ensureAuthenticated, async(req, res) => {
+    const user = await User.findById(req.user.id).populate('roles');
+    res.render('user/profile', { user: user });
+});
 
 router.get('/update/:id', async(req, res) => {
     const user = await User.findById(req.params.id);
@@ -58,6 +59,12 @@ router.put('/:id',
     validatingJoi.validateUpdate(userSchema.update),
     userController.update
 );
+
+router.delete('/:id', async(req, res) => {
+    await User.findByIdAndDelete(req.params.id)
+    req.flash('user_deleted', 'Cuenta eliminada con éxito');
+    res.redirect('/user/login');
+})
 
 router.get('/logout', (req, res) => {
     req.logout();
