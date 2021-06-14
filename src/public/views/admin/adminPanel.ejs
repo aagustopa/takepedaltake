@@ -44,8 +44,8 @@
                 <div class="d-grid gap-2">
                     <a href="/demo/create/" class="btn btn-success btn-lg" type="button">Crear demo del mes</a>
                     <% if(demo){%>
-                        <a href="/demo/update/<%=demo.id %>" class="btn btn-primary btn-lg">Editar demo del mes</a>
-                        <form action="/demo/<%=demo.id%>?_method=DELETE" method="POST" class="d-inline">
+                        <a href="/demo/update/<%=demo[0].id %>" class="btn btn-primary btn-lg">Editar demo del mes</a>
+                        <form action="/demo/<%=demo[0].id%>?_method=DELETE" method="POST" class="d-inline">
                             <input type="submit" class="btn btn-danger btn-lg" value="Borrar demo del mes">
                         </form>
                         <%} else{%>
@@ -58,6 +58,7 @@
                 <hr>
                 <div class="d-grid gap-2 d-md-block mb-3">
                     <a href="/" class="btn btn-secondary" type="button">Back to main page</a>
+                    <a href="/demo" class="btn btn-dark" type="button">Back to demo view</a>
                 </div>
             </div>
         </div>

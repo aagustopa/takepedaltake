@@ -8,8 +8,14 @@ const { isAdmin } = require('../middlewares/authRole');
 const { ensureAuthenticated } = require('../middlewares/guard/authenticated');
 
 
-router.get('/', (req, res) => {
-    res.render('demo/demo');
+router.get('/', async(req, res) => {
+    try {
+        const demo = await Demo.find({});
+        res.render('demo/demo', { demo: demo });
+    } catch (e) {
+        console.log(e);
+        res.redirect('/');
+    }
 })
 
 // router.get('/adminPanel', ensureAuthenticated, isAdmin, async(req, res) => {
