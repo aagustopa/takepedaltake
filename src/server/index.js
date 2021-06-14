@@ -67,6 +67,7 @@ app.use((req, res, next) => {
     res.locals.error = req.flash('error');
     res.locals.role_error = req.flash('role_error');
     res.locals.user_deleted = req.flash('user_deleted');
+    res.locals.user_updated = req.flash('user_updated');
     res.locals.user = req.user || null;
     next();
 });

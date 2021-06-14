@@ -38,3 +38,9 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                     </div>
                                                     <% } %>
+                                                        <% if(user_updated != ''){ %>
+                                                            <div class="alert alert-primary alert-dismissible fade show mt-4" role="alert">
+                                                                <strong><%=user_updated %></strong>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <% } %>
