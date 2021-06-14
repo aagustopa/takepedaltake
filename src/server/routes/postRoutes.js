@@ -7,12 +7,12 @@ const { ensureAuthenticated, ensureGuest } = require('../middlewares/guard/authe
 router.get('/', async(req, res) => {
     const post = await Post.find().sort({ createdAt: 'desc' });
     /*const post = await Post.find({user:req.user.id}).sort({ createdAt: 'desc' });*/
-    res.render('test', { post: post });
+    res.render('post/posts', { posts: post });
 })
 
-router.get('/newview', async(req, res) => {
+router.get('/oldview', async(req, res) => {
     const post = await Post.find({});
-    res.render('post/posts', { posts: post });
+    res.render('test', { post: post });
 })
 
 router.get('/new', ensureAuthenticated, (req, res) => {
@@ -25,7 +25,7 @@ router.get('/turn/:id', async(req, res) => {
     const post = await Post.findById(id);
     post.favourite = !post.favourite;
     await post.save();
-    res.redirect('/post/newview');
+    res.redirect('/post/');
 })
 
 router.get('/edit/:id', async(req, res) => {
