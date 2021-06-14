@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Pedal = require('../models/db/pedalModel');
 const imageMimeTypes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
-
+const { ensureAuthenticated, ensureGuest } = require('../middlewares/guard/authenticated');
 
 router.get('/', async(req, res) => {
     try {
@@ -13,11 +13,9 @@ router.get('/', async(req, res) => {
     } catch {
         res.redirect('/')
     }
-    // res.render('pedal/pedals');
 });
 
 router.get('/all', async(req, res) => {
-    // const pedal = await Pedal.find().sort({ createdAt: 'desc' });
     try {
         const pedals = await Pedal.find({});
         res.render('pedal/all', {
@@ -26,9 +24,9 @@ router.get('/all', async(req, res) => {
     } catch {
         res.redirect('/')
     }
-})
+});
 
-router.get('/new', (req, res) => {
+router.get('/new', ensureAuthenticated, (req, res) => {
     res.render('pedal/new', { pedal: new Pedal() });
 });
 
@@ -50,25 +48,17 @@ router.post('/create', async(req, res) => {
         res.redirect('/compraventa/')
     } catch (err) {
         console.log(err);
-        /*res.redirect('pedal/new');*/
     }
 });
 
-router.get('/:id', async(req, res) => {
-    // try {
-    //     const pedal = await Pedal.findById(req.params.id);
-    //     res.render('pedal/show', { book: book });
-    // } catch (err) {
-    //     res.send(err);
-    //     res.redirect('/pedals')
-    // }
+router.get('/:id', ensureAuthenticated, async(req, res) => {
     const pedal = await Pedal.findById(req.params.id);
     if (pedal == null) res.redirect('/');
     res.render('pedal/show', { pedal: pedal });
 });
 
 
-router.get('/update/:id', async(req, res) => {
+router.get('/update/:id', ensureAuthenticated, async(req, res) => {
     const pedal = await Pedal.findById(req.params.id);
     res.render('pedal/edit', { pedal: pedal });
 });
@@ -98,8 +88,6 @@ router.put('/:id', async(req, res) => {
         } else {
             res.redirect('compraventa/all')
         }
-        // console.log(err);
-        /*res.redirect('pedal/new');*/
     }
 });
 

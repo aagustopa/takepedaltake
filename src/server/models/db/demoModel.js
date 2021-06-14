@@ -88,11 +88,29 @@ const demoSchema = mongoose.Schema({
     }
 })
 
-// demoSchema.virtual('coverImagePath').get(function() {
-//     if (this.coverImage != null && this.coverImageType != null) {
-//         return `data:${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
-//     }
-// })
+demoSchema.virtual('coverImagePath').get(function() {
+    if (this.coverImage != null && this.coverImageType != null) {
+        return `data:${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
+    }
+});
+
+demoSchema.virtual('coverImagePath2').get(function() {
+    if (this.coverImage2 != null && this.coverImageType2 != null) {
+        return `data:${this.coverImageType2};charset=utf-8;base64,${this.coverImage2.toString('base64')}`
+    }
+});
+
+demoSchema.virtual('coverImagePath3').get(function() {
+    if (this.coverImage3 != null && this.coverImageType3 != null) {
+        return `data:${this.coverImageType3};charset=utf-8;base64,${this.coverImage3.toString('base64')}`
+    }
+})
+
+demoSchema.virtual('coverImagePath4').get(function() {
+    if (this.coverImage4 != null && this.coverImageType4 != null) {
+        return `data:${this.coverImageType4};charset=utf-8;base64,${this.coverImage4.toString('base64')}`
+    }
+})
 
 
 module.exports = mongoose.model('Demo', demoSchema);

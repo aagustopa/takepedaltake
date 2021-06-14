@@ -16,19 +16,11 @@ router.get('/', async(req, res) => {
         console.log(e);
         res.redirect('/');
     }
-})
-
-// router.get('/adminPanel', ensureAuthenticated, isAdmin, async(req, res) => {
-//     const demo = await Demo.findById(req.params.id);
-//     // const user = await User.findById(req.params.id);
-//     // res.render('admin/adminPanel', { demo: demo }, { user: user });
-//     res.render('admin/adminPanel', { demo: demo });
-//     // res.send('Aqui solo puede entrar el admin, putitos not allowed');
-// })
+});
 
 router.get('/create', ensureAuthenticated, isAdmin, (req, res) => {
     res.render('demo/create', { demo: new Demo() });
-})
+});
 
 router.post('/new', async(req, res) => {
     const demo = new Demo({
@@ -45,9 +37,6 @@ router.post('/new', async(req, res) => {
         finalTitle: req.body.finalTitle,
         finalDescription: req.body.finalDescription,
     });
-    // for (let i = 1; i < 4; i++) {
-    //     saveCover(demo, req.body.cover[i])
-    // }
     saveFirstCover(demo, req.body.firstCover);
     saveSecondCover(demo, req.body.secondCover);
     saveThirdCover(demo, req.body.thirdCover)
@@ -60,7 +49,7 @@ router.post('/new', async(req, res) => {
     }
 });
 
-router.get('/update/:id', async(req, res) => {
+router.get('/update/:id', ensureAuthenticated, isAdmin, async(req, res) => {
     const demo = await Demo.findById(req.params.id);
     res.render('demo/edit', { demo: demo });
 })
@@ -100,8 +89,6 @@ router.put('/:id', async(req, res) => {
         } else {
             res.redirect('demo/demo')
         }
-        // console.log(err);
-        /*res.redirect('pedal/new');*/
     }
 });
 
@@ -145,6 +132,5 @@ function saveFourthCover(pedal, coverEncoded) {
         pedal.coverImageType4 = cover.type;
     }
 }
-
 
 module.exports = router;

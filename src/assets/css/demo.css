@@ -17,9 +17,6 @@ body {
 /* hacer ruta de codigo html */
 
 .content {
-    /* max-width: 1250px;
-    margin: auto;
-    padding: 0px 30px; */
     box-shadow: none;
     border: none;
     line-height: initial;
@@ -81,29 +78,10 @@ body {
     color: #96b0fd;
 }
 
-
-/* making li menu in middle of menu */
-
-
-/* .navbar>.content>.menu-list>li {
-    margin-top: 10px;
-} */
-
-
-/* banner with tag img */
-
 .banner {
-    /* width: 100%; */
-    /* height: 100%; */
-    /* height: 100vh; */
-    /* background: url("../img/landing.jpg") no-repeat; */
-    /* background: no-repeat; */
-    /* background: url("https://images.unsplash.com/photo-1461783697079-622c15da8c47?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80") no-repeat; */
     display: block;
     width: 100%;
-    /* height: 100%; */
     height: 100vh;
-    /* height: 50vh; */
     object-fit: cover;
     background: no-repeat;
     background-size: cover;
@@ -113,7 +91,6 @@ body {
 
 .center {
     position: absolute;
-    /* top: 52%; */
     top: 47%;
     left: 50%;
     width: 13%;
@@ -129,21 +106,7 @@ body {
     font-weight: 600;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-transform: uppercase;
-    /* background-color: #000;
-    width: 20%; */
 }
-
-
-/* banner with div */
-
-
-/* .banner{
-    height: 100vh;
-    background:url("../img/landing.jpg") no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-} */
 
 .about {
     padding: 40px 0;
@@ -345,7 +308,6 @@ footer {
     /* TEXT IMAGE CENTER */
     .center {
         position: absolute;
-        /* top: 52%; */
         top: 50%;
         left: 50%;
         width: 50%;
@@ -357,102 +319,5 @@ footer {
     }
     .center>.title {
         font-size: 37px;
-    }
-    /* FIRST CARDS RESPONSIVE */
-    .about2 {
-        display: block;
-        width: 100%;
-        height: 50vh;
-        border-bottom: 2px solid white;
-    }
-    .about2>.content>h1 {
-        color: whitesmoke;
-        /* font-size: 12px; */
-        max-width: 350px;
-        width: 85%;
-        height: 40vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        /* right: 0;
-        left: 0;
-        top: 0;
-        bottom: 0; */
-        margin: auto;
-        text-align: center;
-        font-size: 40px;
-    }
-    .about2>.content>h2 {
-        color: whitesmoke;
-        /* font-size: 12px; */
-        max-width: 350px;
-        width: 85%;
-        height: 60vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        /* right: 0;
-        left: 0;
-        top: 0;
-        bottom: 0; */
-        margin: auto;
-        text-align: center;
-        font-size: 25px;
-    }
-    /* si comento este bloque solo aparecerán los 3 cards negros pero en responsive */
-    .photo:nth-child(2) {
-        display: block;
-        width: 100%;
-        height: 55vh;
-        background: url("../img/newpedal.jpg") no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-    /* .about2>.photo:nth-child() {
-        display: block;
-        width: 100%;
-        height: 55vh;
-        background: url("../img/newpedal.jpg") no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-    .about2>.photo:nth-child() {
-        display: block;
-        width: 100%;
-        height: 55vh;
-        background: url("../img/newpedal.jpg") no-repeat;
-        background-size: cover;
-        background-position: center;
-    } */
-    /* .photo:nth-child(1) {
-        width: 100%;
-        height: 55vh;
-        background: url("../img/newnewpedal.jpg") no-repeat;
-        background-size: cover;
-        background-position: center;
-    } */
-    /* CARDS RESPONSIVE */
-    .slider {
-        width: 100%;
-        display: block;
-        margin-left: 0px;
-        padding: 30px;
-    }
-    .slider .card {
-        margin-bottom: 30px;
-    }
-    /* FOOTER RESPONSIVE */
-    footer {
-        position: relative;
-        bottom: 0px;
-    }
-    .main-content {
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-    .main-content .box {
-        margin: 5px 0;
     }
 }

@@ -11,8 +11,6 @@ const path = require('path');
 const initialSetup = require('./libs/initialSetup');
 require('dotenv').config();
 
-// new hosting?
-// https://www.atlantic.net/vps-hosting/webdevsimplified/
 
 const app = express();
 initialSetup.createRoles();
@@ -25,28 +23,19 @@ app.use(express.static(path.join(__dirname, '../assets')));
 app.use(express.static(path.join(__dirname, '../js')));
 
 // aqui digo que las vistas estan en la ruta public/views
-// const outsitePath = 'C:/Users/aleja/OneDrive/Documents/takepedaltake/src/public/views';
 app.set('views', path.join(__dirname, '../public/views'));
 
 // aqui digo que view engine(convertidor de ejs a html) lea ficheros ejs
-// es esto mejorable??? ver video https://www.youtube.com/watch?v=-bI0diefasA minuto 20:30 y ver pagina about ejs https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application-es 
 app.set('view engine', 'ejs');
 
 app.use(cors());
 
-
-// https://github.com/apostrophecms/apostrophe/issues/1291
 app.use(express.json({ limit: '50mb', extended: true }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(methodOverride('_method'));
 
 connect.createConnection();
 
-// express session middleware
-// El middleware express-session almacena los datos de sesión en el servidor;
-// sólo guarda el ID de sesión en la propia cookie, no los datos de sesión. 
-// De forma predeterminada, utiliza el almacenamiento en memoria y no está diseñado para un entorno de producción
-// otro dato: esta configuración basica nos permetirá autenticar al usuario y almacenar sus datos temporalmente
 app.use(session({
     secret: 'secret',
     resave: true,
@@ -71,8 +60,6 @@ app.use((req, res, next) => {
     res.locals.user = req.user || null;
     next();
 });
-// los mensajes flash los usamos porque estamos redirecting (para redirijir de una pagina a otra), lo estamos guardando en la sesion
-// guardando o storage in sessions
 
 app.get('/', function(req, res) {
     res.render('home')
@@ -94,6 +81,3 @@ app.get('**', (req, res) => {
 app.listen(process.env.PORT, function() {
     console.log(`TakePedalTake web listening and working on port ${process.env.PORT}!\nhttp://localhost:3000/\n${process.env.WEB}`)
 });
-
-
-// https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application-es

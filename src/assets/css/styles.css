@@ -104,12 +104,6 @@ h2 {
 /* banner with tag img */
 
 .banner {
-    /* width: 100%; */
-    /* height: 100%; */
-    /* height: 100vh; */
-    /* background: url("../img/landing.jpg") no-repeat; */
-    /* background: no-repeat; */
-    /* background: url("https://images.unsplash.com/photo-1461783697079-622c15da8c47?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80") no-repeat; */
     display: block;
     width: 100%;
     height: 100%;
@@ -119,18 +113,6 @@ h2 {
     background-position: center;
     background-attachment: fixed;
 }
-
-
-/* banner with div */
-
-
-/* .banner{
-    height: 100vh;
-    background:url("../img/landing.jpg") no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-} */
 
 .about {
     padding: 40px 0;
@@ -179,7 +161,6 @@ h2 {
 }
 
 .slider .card .img {
-    /* height: 200px; */
     height: 400px;
     width: 100%;
 }
@@ -405,7 +386,6 @@ footer {
     }
     .about2>.content>h1 {
         color: whitesmoke;
-        /* font-size: 12px; */
         max-width: 350px;
         width: 85%;
         height: 40vh;
@@ -413,17 +393,12 @@ footer {
         align-items: center;
         justify-content: center;
         position: absolute;
-        /* right: 0;
-        left: 0;
-        top: 0;
-        bottom: 0; */
         margin: auto;
         text-align: center;
         font-size: 40px;
     }
     .about2>.content>h2 {
         color: whitesmoke;
-        /* font-size: 12px; */
         max-width: 350px;
         width: 85%;
         height: 60vh;
@@ -431,10 +406,6 @@ footer {
         align-items: center;
         justify-content: center;
         position: absolute;
-        /* right: 0;
-        left: 0;
-        top: 0;
-        bottom: 0; */
         margin: auto;
         text-align: center;
         font-size: 25px;
@@ -448,30 +419,6 @@ footer {
         background-size: cover;
         background-position: center;
     }
-    /* .about2>.photo:nth-child() {
-        display: block;
-        width: 100%;
-        height: 55vh;
-        background: url("../img/newpedal.jpg") no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-    .about2>.photo:nth-child() {
-        display: block;
-        width: 100%;
-        height: 55vh;
-        background: url("../img/newpedal.jpg") no-repeat;
-        background-size: cover;
-        background-position: center;
-    } */
-    /* .photo:nth-child(1) {
-        width: 100%;
-        height: 55vh;
-        background: url("../img/newnewpedal.jpg") no-repeat;
-        background-size: cover;
-        background-position: center;
-    } */
-    /* CARDS RESPONSIVE */
     .slider {
         width: 100%;
         display: block;

@@ -53,9 +53,4 @@ pedalSchema.virtual('coverImagePath').get(function() {
     }
 })
 
-// make conditional or validation
-// that if there's no sell or rent then error
-// there must be one of them or both
-
-
 module.exports = mongoose.model('Pedal', pedalSchema);

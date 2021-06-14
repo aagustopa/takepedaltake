@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// video min 51:35 about marked, dompurify etc etc
 const marked = require('marked');
 const slugify = require('slugify');
 const createDomPurify = require('dompurify');
@@ -41,20 +40,7 @@ const postSchema = new mongoose.Schema({
         type: String
     }
 });
-/*id usuario por cada post
-https://www.youtube.com/watch?v=-bI0diefasA minuto 3:13:40
- */
 
-/* favourite:{
-        type:Boolean,
-        default:false
-
-    https://www.youtube.com/watch?v=3J925fRl_UE
-    minuto 1:13:50
-
-    }*/
-
-// video min 41:30
 postSchema.pre('validate', function(next) {
     if (this.title) {
         this.slug = slugify(this.title, { lower: true, strict: true })
@@ -68,9 +54,3 @@ postSchema.pre('validate', function(next) {
 })
 
 module.exports = mongoose.model('Post', postSchema);
-
-// module.exports = mongoose.mongo.model('Post', mongoose.Schema({
-//     title: String,
-//     description: String,
-//     markdown: String
-// }))
