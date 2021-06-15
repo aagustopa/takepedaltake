@@ -7,51 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Update User</title>
+    <style>
+        body {
+            background-color: #323232;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container mt-4">
         <form action="/user/<%=user.id %>?_method=PUT" method="POST">
-            <h2 class="text-center">Actualice sus datos</h2>
-            <hr>
-            <div class="alert alert-danger" role="alert">
+            <!-- <div class="alert alert-danger" role="alert">
                 Si quieres que tu cuenta exista, antes de abandonar o actualizar tu perfil te recomiendo que cambies la contraseña y ponga una nueva fecha de nacimiento o vuelvas a poner tu fecha de nacimiento de antes. De lo contrario, si dejas esos dos campos tal y
                 como están y no haces lo que te pido, cuando le des al botón Save tu contraseña y fecha de nacimiento se resetearan y probablemente pierdas tu cuenta. Si no quieres cambiar nada puedes darle a Cancel y no pasará nada.
-            </div>
-            <div class="alert alert-warning" role="alert">
+            </div> -->
+            <!-- <div class="alert alert-warning" role="alert">
                 Disculpa las molestias, es un problema que sigo trabajando y en el futuro quedará arreglado.
-            </div>
-            <%- include('../partials/messages'); %>
-                <div class="row justify-content-center">
+            </div> -->
+            <%#comment 
+            - include('../partials/messages');
+                %>
+                <div class="row justify-content-center" style="margin-top: 150px;">
                     <div class="col-md-6">
+                        <h1 class="text-center" style="color: white;">Actualice sus datos</h1>
+                        <hr>
+                        <div class="alert alert-danger" role="alert">
+                            <p class="lead"><strong> La opción de editar usuario ha quedado temporalmente inhablitada por motivo de bugs. Estamos tratando de arreglarlo lo más antes posible, disculpe las molestías
+                            </strong></p>
+                        </div>
+                        <a href="/user/profile/#container" class="btn btn-primary btn-lg">Volver al perfil</a>
+                        <%# comment 
                         <div class="form-group mb-2">
                             <label for="firstName">First Name</label>
-                            <input value="<%=user.firstName%>" type="text" name="firstName" id="firstName" class="form-control">
-                        </div>
-                        <div class="form-group mb-2">
-                            <label for="lastName">Last Name</label>
-                            <input value="<%=user.lastName %>" name="lastName" id="lastName" class="form-control">
-                        </div>
-                        <div class="form-group mb-2">
-                            <label for="email">Email</label>
-                            <input value="<%=user.email %>" name="email" id="email" class="form-control">
-                        </div>
+                            <input value="user.firstName" type="text" name="firstName" id="firstName" class="form-control">
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-2">
-                            <label for="password">Password</label>
-                            <input value="<%=user.password %> " type="password" name="password" id="password" class="form-control">
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="birthDate">Birth Date</label>
-                            <input type="date" value="<%=user.birthDate%>" name="birthDate" id="birthDate" class="form-control">
-                        </div>
-                        <a href="/user/profile" class="btn btn-secondary">Cancel</a>
-                        <input type="submit" value="Save" class="btn btn-primary">
+                    <div class="form-group mb-2">
+                        <label for="lastName">Last Name</label>
+                        <input value="user.lastName" name="lastName" id="lastName" class="form-control">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="email">Email</label>
+                        <input value="user.email" name="email" id="email" class="form-control">
                     </div>
                 </div>
+                %>
+                            <!-- <div class="col-md-6"> -->
+                            <%#comment 
+                                <div class="form-group mb-2">
+                                    <label for="password">Password</label>
+                                    <input value="user.password" type="password" name="password" id="password" class="form-control">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="birthDate">Birth Date</label>
+                                <input type="date" value="user.birthDate" name="birthDate" id="birthDate" class="form-control">
+                            </div>
+                            <a href="/user/profile" class="btn btn-secondary">Cancel</a>
+                            <input type="submit" value="Save" class="btn btn-primary">
+                    </div>
+                    %>
+                                <!-- </div> -->
         </form>
-    </div>
+        </div>
 </body>
 
 </html>

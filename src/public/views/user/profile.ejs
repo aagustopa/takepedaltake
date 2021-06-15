@@ -79,9 +79,9 @@
                     <p class="lead mb-4">
                         <%=user.birthDate.toDateString() %>
                     </p>
-                    <a href="/user/update/<%=user.id %> " class="btn btn-primary">Editar</a>
+                    <a href="/user/update/<%=user.id %> " class="btn btn-primary btn-lg">Editar</a>
                     <form action="/user/<%=user.id%>?_method=DELETE" method="POST" class="d-inline">
-                        <input type="submit" class="btn btn-danger" value="Delete">
+                        <input type="submit" class="btn btn-danger btn-lg" value="Delete">
                     </form>
                     <hr>
                     <h6>Cuenta creada</h6>
