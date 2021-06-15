@@ -55,10 +55,6 @@ function savePostAndRedirect(path) {
         post.markdown = req.body.markdown
         post.user = req.user.id
         try {
-            /*
-            if(path==='new'){
-                post.user=req.user.id;
-            }*/
             post = await post.save()
             res.redirect(`/post/${post.slug}`)
         } catch (e) {

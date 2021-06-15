@@ -36,7 +36,7 @@ router.get('/profile', ensureAuthenticated, async(req, res) => {
     res.render('user/profile', { user: user });
 });
 
-router.get('/update/:id', async(req, res) => {
+router.get('/update/:id', ensureAuthenticated, async(req, res) => {
     const user = await User.findById(req.params.id);
     res.render('user/edit', { user: user });
 });
@@ -54,13 +54,13 @@ router.put('/:id', async(req, res) => {
         if (user.email) {
             checkEmail(user.email);
         }
-        if (user.password && user.password === user.repeat_password) {
+        if (user.password) {
             const hashPwd = await bcrypt.hash(user.password, 10);
             user.password = hashPwd;
         }
         await user.save();
         req.flash('user_updated', 'Usuario actualizado con éxito');
-        res.redirect(`/profile`)
+        res.redirect(`/user/profile`)
     } catch (err) {
         console.log(err);
         res.redirect('/user/profile');

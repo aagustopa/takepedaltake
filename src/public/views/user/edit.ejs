@@ -10,43 +10,47 @@
 </head>
 
 <body>
-    <div class="container">
-        <h2>Actualice sus datos</h2>
-        <%- include('../partials/messages'); %>
-            <div class="row justify-content-center">
-                <form action="/user/<%=user.id %>?_method=PUT" method="POST">
-                    <div class="col-md-4 border border-dark rounded" style="background-color: rgb(147, 178, 255);">
-                        <div class="form-group">
+    <div class="container mt-4">
+        <form action="/user/<%=user.id %>?_method=PUT" method="POST">
+            <h2 class="text-center">Actualice sus datos</h2>
+            <hr>
+            <div class="alert alert-danger" role="alert">
+                Si quieres que tu cuenta exista, antes de abandonar o actualizar tu perfil te recomiendo que cambies la contraseña y ponga una nueva fecha de nacimiento o vuelvas a poner tu fecha de nacimiento de antes. De lo contrario, si dejas esos dos campos tal y
+                como están y no haces lo que te pido, cuando le des al botón Save tu contraseña y fecha de nacimiento se resetearan y probablemente pierdas tu cuenta. Si no quieres cambiar nada puedes darle a Cancel y no pasará nada.
+            </div>
+            <div class="alert alert-warning" role="alert">
+                Disculpa las molestias, es un problema que sigo trabajando y en el futuro quedará arreglado.
+            </div>
+            <%- include('../partials/messages'); %>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="form-group mb-2">
                             <label for="firstName">First Name</label>
                             <input value="<%=user.firstName%>" type="text" name="firstName" id="firstName" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <label for="lastName">Last Name</label>
                             <input value="<%=user.lastName %>" name="lastName" id="lastName" class="form-control">
                         </div>
-                        <div class="form-group mb-3">
+                        <div class="form-group mb-2">
                             <label for="email">Email</label>
                             <input value="<%=user.email %>" name="email" id="email" class="form-control">
                         </div>
                     </div>
-                    <div class="col-md-4 align-items-stretch border border-dark">
-                        <div class="form-group">
+                    <div class="col-md-6">
+                        <div class="form-group mb-2">
                             <label for="password">Password</label>
-                            <input type="password" name="password" id="password" class="form-control">
+                            <input value="<%=user.password %> " type="password" name="password" id="password" class="form-control">
                         </div>
-                        <div class="form-group">
-                            <label for="repeat_password">Repeat password</label>
-                            <input type="password" name="repeat_password" id="repeat_password" class="form-control">
-                        </div>
-                        <div class="form-group mb-3">
+                        <div class="form-group mb-4">
                             <label for="birthDate">Birth Date</label>
                             <input type="date" value="<%=user.birthDate%>" name="birthDate" id="birthDate" class="form-control">
                         </div>
+                        <a href="/user/profile" class="btn btn-secondary">Cancel</a>
+                        <input type="submit" value="Save" class="btn btn-primary">
                     </div>
-            </div>
-            <a href="/user/profile" class="btn btn-secondary">Cancel</a>
-            <input type="submit" value="Save" class="btn btn-primary">
-            </form>
+                </div>
+        </form>
     </div>
 </body>
 

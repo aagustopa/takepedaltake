@@ -15,17 +15,6 @@ router.get('/', async(req, res) => {
     }
 });
 
-router.get('/all', async(req, res) => {
-    try {
-        const pedals = await Pedal.find({});
-        res.render('pedal/all', {
-            pedals: pedals,
-        })
-    } catch {
-        res.redirect('/')
-    }
-});
-
 router.get('/new', ensureAuthenticated, (req, res) => {
     res.render('pedal/new', { pedal: new Pedal() });
 });
@@ -93,7 +82,7 @@ router.put('/:id', async(req, res) => {
 
 router.delete('/:id', async(req, res) => {
     await Pedal.findByIdAndDelete(req.params.id)
-    res.redirect('/compraventa/all')
+    res.redirect('/compraventa/')
 });
 
 function saveCover(pedal, coverEncoded) {
