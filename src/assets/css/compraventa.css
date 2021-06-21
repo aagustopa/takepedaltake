@@ -209,4 +209,8 @@ body {
     .card-img-top {
         height: 60vw;
     }
+    .align-items-stretch>.card {
+        margin-bottom: 27px;
+        border: 1px solid rgb(143, 143, 143);
+    }
 }
