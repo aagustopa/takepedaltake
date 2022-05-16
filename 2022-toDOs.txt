@@ -1,0 +1,11 @@
+mejoras 2022
+1. Editar perfil de usuario
+2. Mejorar frontend de:
+    1-home/landing
+    2-vistas privada de pedales
+    3-demo del mes 
+    4-mejorar vista perfil de usuario
+3. Añadir chat
+4. Enlace a portfolio
+
+pero antes de nada, volver a entender el código entero y repasarlo
